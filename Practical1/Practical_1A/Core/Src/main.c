@@ -27,6 +27,15 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+	uint8_t LED_mode;
+	uint8_t pa1_2Mask = 0b00000001; // Can be inverted to switch between the tasks
+	uint8_t pa3_Mask; // Random number to be placed on leds
+
+	typedef uint8_t flag_t;
+	flag_t startFlag = FALSE;
+	flag_t firstFlag = FALSE;
+	flag_t secondFlag = FALSE;
+	flag_t thirdFlag = FALSE;
 
 /* USER CODE END PTD */
 
@@ -57,6 +66,12 @@ static void MX_TIM16_Init(void);
 void TIM16_IRQHandler(void);
 void led_pattern(void);
 void button_press(void);
+
+void display1(void);
+void display2(void);
+void display3(void);
+void checkPB(void);
+void out(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,9 +116,6 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
-  uint8_t LED_mode;
-	uint8_t pa1_2Mask = 0b00000001; // Can be inverted to switch between the tasks
-	uint8_t pa3_Mask; // Random number to be placed on leds
 
   /* USER CODE END 1 */
 
