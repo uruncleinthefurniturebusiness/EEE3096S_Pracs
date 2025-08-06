@@ -55,10 +55,40 @@ static void MX_GPIO_Init(void);
 static void MX_TIM16_Init(void);
 /* USER CODE BEGIN PFP */
 void TIM16_IRQHandler(void);
+void led_pattern(void);
+void button_press(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
+
+void button_press(void){
+    // Check PA1 for Mode 1
+    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_SET)
+    {
+        current_mode = MODE_1;
+        current_led_position = 0;
+        direction = 1;
+    }
+    
+    // Check PA2 for Mode 2
+    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2) == GPIO_PIN_SET)
+    {
+        current_mode = MODE_2;
+        current_led_position = 0;
+        direction = 1;
+    }
+    
+    // Check PA3 for Mode 3
+    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3) == GPIO_PIN_SET)
+    {
+        current_mode = MODE_3;
+        current_led_position = 0;
+        direction = 1;
+    }
+}
 
 /* USER CODE END 0 */
 
@@ -70,12 +100,17 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+
+  uint8_t LED_mode;
+	uint8_t pa1_2Mask = 0b00000001; // Can be inverted to switch between the tasks
+	uint8_t pa3_Mask; // Random number to be placed on leds
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
@@ -92,6 +127,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // TODO: Start timer TIM16
+  // Start the timer interrupt
+  HAL_TIM_Base_Start_IT(&htim16);
+  
 
  
 
@@ -101,6 +139,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+
+
 
     /* USER CODE END WHILE */
 
@@ -322,6 +363,18 @@ void TIM16_IRQHandler(void)
 	HAL_TIM_IRQHandler(&htim16);
 
 	// TODO: Change LED pattern
+  if (__HAL_TIM_GET_FLAG(&htim16, TIM_FLAG_UPDATE) != RESET){
+      __HAL_TIM_CLEAR_IT(&htim16, TIM_IT_UPDATE);
+        
+      // Handle button presses for mode selection
+      handle_button_press();
+        
+      // Update LED pattern based on current mode
+      update_led_pattern();
+      
+      // Apply the pattern to LEDs
+      set_all_leds(led_pattern);
+    }
 
 
 
