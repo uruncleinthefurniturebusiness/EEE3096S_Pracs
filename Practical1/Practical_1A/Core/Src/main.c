@@ -1,4 +1,4 @@
-/* USER CODE BEGIN Header */
+/* SMTJOS022 X BHYEBR002 EEE3096S Practical 1*/
 /**
   ******************************************************************************
   * @file           : main.c
@@ -27,15 +27,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-	uint8_t LED_mode;
-	uint8_t pa1_2Mask = 0b00000001; // Can be inverted to switch between the tasks
-	uint8_t pa3_Mask; // Random number to be placed on leds
-
-	typedef uint8_t flag_t;
-	flag_t startFlag = FALSE;
-	flag_t firstFlag = FALSE;
-	flag_t secondFlag = FALSE;
-	flag_t thirdFlag = FALSE;
+	
 
 /* USER CODE END PTD */
 
@@ -374,19 +366,6 @@ void TIM16_IRQHandler(void)
 	// Acknowledge interrupt
 	HAL_TIM_IRQHandler(&htim16);
 
-	// TODO: Change LED pattern
-  if (__HAL_TIM_GET_FLAG(&htim16, TIM_FLAG_UPDATE) != RESET){
-      __HAL_TIM_CLEAR_IT(&htim16, TIM_IT_UPDATE);
-        
-      // Handle button presses for mode selection
-      handle_button_press();
-        
-      // Update LED pattern based on current mode
-      update_led_pattern();
-      
-      // Apply the pattern to LEDs
-      set_all_leds(led_pattern);
-    }
 
 
 
