@@ -27,6 +27,19 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+typedef enum{
+  MODE_OFF = 0;
+  MODE_1;
+  MODE_2;
+  MODE_3;
+} led_mode_t;
+
+typedef struct{
+  led_mode_t current_mode;
+  uint8_t current_led_position;
+  uint8_t direction; //1 means forward, 0 means reverse
+
+} led_system_t;
 	
 
 /* USER CODE END PTD */
@@ -46,6 +59,7 @@ TIM_HandleTypeDef htim16;
 
 /* USER CODE BEGIN PV */
 // TODO: Define input variables
+led_system_t leds;
 
 
 /* USER CODE END PV */
@@ -56,46 +70,107 @@ static void MX_GPIO_Init(void);
 static void MX_TIM16_Init(void);
 /* USER CODE BEGIN PFP */
 void TIM16_IRQHandler(void);
-void led_pattern(void);
-void button_press(void);
 
-void display1(void);
-void display2(void);
-void display3(void);
-void checkPB(void);
-void out(void);
+// This is our shit funcitons, 
+void update_leds(uint8_t pattern);
+void init_led_system(void);
+
+void mode1(void);
+void mode2(void);
+void mode3(void);
+uint8_t debounce_button(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, uint8_t button_index);
+
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-
-
-void button_press(void){
-    // Check PA1 for Mode 1
-    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_SET)
-    {
-        current_mode = MODE_1;
-        current_led_position = 0;
-        direction = 1;
-    }
-    
-    // Check PA2 for Mode 2
-    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2) == GPIO_PIN_SET)
-    {
-        current_mode = MODE_2;
-        current_led_position = 0;
-        direction = 1;
-    }
-    
-    // Check PA3 for Mode 3
-    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3) == GPIO_PIN_SET)
-    {
-        current_mode = MODE_3;
-        current_led_position = 0;
-        direction = 1;
-    }
+void update_leds(uint8_t pattern) {
+    // Update each LED based on the pattern
+    HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, (pattern & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, (pattern & 0x02) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, (pattern & 0x04) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, (pattern & 0x08) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, (pattern & 0x10) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, (pattern & 0x20) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, (pattern & 0x40) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LED7_GPIO_Port, LED7_Pin, (pattern & 0x80) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
+
+void init_led_system(void){
+
+  led_system.current_mode = MODE_OFF;
+  led_system.current_led_position = 0;
+  led_system.direction = 1;
+  led_system.sparkle_hold_counter = 0;
+  led_system.sparkle_turn_off_counter = 0;
+  led_system.sparkle_state = SPARKLE_GENERATE;
+  led_system.sparkle_pattern = 0;
+  led_system.turn_off_index = 0;
+  led_system.num_leds_on = 0;
+  led_system.delay_mode = 0;
+    
+  // Initialize random seed
+  srand(HAL_GetTick());
+    
+  // Turn off all LEDs
+  update_leds(0x00);
+}
+
+void mode1(void){
+  uint8_t pattern = (1 <<leds.current_led_position);
+  update_leds(pattern);
+
+  if (leds.direction == 1){
+    if (leds.current_led_position == 7){
+      leds.direction = 0;
+      leds.current_led_position = 6;
+    }
+    else{
+      leds.current_led_position++;
+    }
+  }
+  else {
+    if (leds.current_led_position == 0){
+      leds.direction = 1;
+      leds.current_led_position = 1;
+    }
+    else{
+      leds.current_led_position--;
+    }
+
+  }
+
+}
+
+void mode2(void){
+  uint8_t pattern = 0xFF & ~(1<<leds.current_led_position);
+  update_leds(pattern);
+
+  if (leds.direction == 1){
+    if (leds.current_led_position == 7){
+      leds.direction = 0;
+      leds.current_led_position = 6;
+    }
+    else{
+      leds.current_led_position++;
+    }
+  }
+  else {
+    if (leds.current_led_position == 0){
+      leds.direction = 1;
+      leds.current_led_position = 1;
+    }
+    else{
+      leds.current_led_position--;
+    }
+
+  }
+
+}
+
+
 
 /* USER CODE END 0 */
 
@@ -365,6 +440,8 @@ void TIM16_IRQHandler(void)
 {
 	// Acknowledge interrupt
 	HAL_TIM_IRQHandler(&htim16);
+
+
 
 
 
