@@ -28,10 +28,10 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 typedef enum{
-  MODE_OFF = 0;
-  MODE_1;
-  MODE_2;
-  MODE_3;
+  MODE_OFF = 0,
+  MODE_1,
+  MODE_2,
+  MODE_3,
 } led_mode_t;
 
 typedef struct{
@@ -60,6 +60,8 @@ TIM_HandleTypeDef htim16;
 /* USER CODE BEGIN PV */
 // TODO: Define input variables
 led_system_t leds;
+uint32_t last_button_time = 0;
+uint8_t previous_button_state[4] = {0};
 
 
 /* USER CODE END PV */
@@ -100,16 +102,9 @@ void update_leds(uint8_t pattern) {
 
 void init_led_system(void){
 
-  led_system.current_mode = MODE_OFF;
-  led_system.current_led_position = 0;
-  led_system.direction = 1;
-  led_system.sparkle_hold_counter = 0;
-  led_system.sparkle_turn_off_counter = 0;
-  led_system.sparkle_state = SPARKLE_GENERATE;
-  led_system.sparkle_pattern = 0;
-  led_system.turn_off_index = 0;
-  led_system.num_leds_on = 0;
-  led_system.delay_mode = 0;
+  leds.current_mode = MODE_OFF;
+  leds.current_led_position = 0;
+  leds.direction = 1;
     
   // Initialize random seed
   srand(HAL_GetTick());
@@ -145,6 +140,8 @@ void mode1(void){
 }
 
 void mode2(void){
+
+
   uint8_t pattern = 0xFF & ~(1<<leds.current_led_position);
   update_leds(pattern);
 
@@ -170,6 +167,24 @@ void mode2(void){
 
 }
 
+uint8_t debounce_button(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, uint8_t button_index) {
+  uint8_t current_state = (HAL_GPIO_ReadPin(GPIOx, GPIO_Pin) == GPIO_PIN_RESET) ? 1 : 0;  // Active low
+  uint8_t button_pressed = 0;
+
+  if (current_state && !previous_button_state[button_index]) {
+        // Button just pressed
+    uint32_t current_time = HAL_GetTick();
+    if (current_time - last_button_time > 200) {  // 200ms debounce
+      button_pressed = 1;
+      last_button_time = current_time;
+    }
+  }
+    
+  previous_button_state[button_index] = current_state;
+  return button_pressed;
+
+
+}
 
 
 /* USER CODE END 0 */
@@ -441,7 +456,28 @@ void TIM16_IRQHandler(void)
 	// Acknowledge interrupt
 	HAL_TIM_IRQHandler(&htim16);
 
+  if (debounce_button(Button1_GPIO_Port, Button1_Pin, 1)){
+    leds.current_mode = MODE_1;
+    leds.current_led_position = 0;
+    leds.direction = 1;
+  }
+  else if (debounce_button(Button2_GPIO_Port, Button2_Pin, 2)){
+    leds.current_mode = MODE_2;
+    leds.current_led_position = 0;
+    leds.direction = 1;
+  }
 
+  switch (leds.current_mode){
+    case MODE_1:
+      mode1();
+      break;
+    case MODE_2:
+      mode2();
+      break;
+    default:
+      update_leds(0); // Turns the fucking LEDS off apprarently
+      break;
+  }
 
 
 
