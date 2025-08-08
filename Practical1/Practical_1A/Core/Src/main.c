@@ -23,6 +23,9 @@
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
 #include "stm32f0xx.h"
+#include <lcd_stm32f0.c> 
+#include <stdlib.h> 
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,6 +49,7 @@ typedef struct{
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DELAY 150;
 
 /* USER CODE END PD */
 
@@ -197,6 +201,13 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  init_LCD();
+  lcd_command(CLEAR);
+  lcd_putstring("Group 9");
+  lcd_command(LINE_TWO);
+  lcd_putstring("Prac 1");
+
+  init_led_system();
 
 
   /* USER CODE END 1 */
@@ -234,14 +245,31 @@ int main(void)
   while (1)
   {
 
-
-
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
     // TODO: Check pushbuttons to change timer delay
+    if (debounce_button(Button0_GPIO_Port, Button0_Pin, 0)) {
+      // Toggle between 1s and 0.5s delays
+      static uint8_t delay_mode = 0;  // 0 = 1s, 1 = 0.5s
+      delay_mode = !delay_mode;
+    
+      // Stop timer before changing period
+      HAL_TIM_Base_Stop_IT(&htim16);
+    
+      if (delay_mode == 1) {
+        // 0.5 second delay
+        htim16.Init.Period = 500 - 1;
+      } else {
+        // 1.0 second delay  
+        htim16.Init.Period = 1000 - 1;
+      }
+    
+      // Reinitialize and restart timer
+      HAL_TIM_Base_Init(&htim16);
+      HAL_TIM_Base_Start_IT(&htim16);
+    }
 
 
     
@@ -478,7 +506,6 @@ void TIM16_IRQHandler(void)
       update_leds(0); // Turns the fucking LEDS off apprarently
       break;
   }
-
 
 
 
