@@ -260,15 +260,15 @@ int main(void)
     
       if (delay_mode == 1) {
         // 0.5 second delay
-        htim16.Init.Period = 500 - 1;
+        htim16.Instance.Period = 500 - 1;
       } else {
         // 1.0 second delay  
-        htim16.Init.Period = 1000 - 1;
+        htim16.Instance.Period = 1000 - 1;
       }
     
       // Reinitialize and restart timer
-      HAL_TIM_Base_Init(&htim16);
-      HAL_TIM_Base_Start_IT(&htim16);
+      //HAL_TIM_Base_Init(&htim16);
+      //HAL_TIM_Base_Start_IT(&htim16);
     }
 
 
@@ -494,8 +494,8 @@ void TIM16_IRQHandler(void)
     leds.current_led_position = 0;
     leds.direction = 1;
   }
-
-  switch (leds.current_mode){
+//sex
+  /*switch (leds.current_mode){
     case MODE_1:
       mode1();
       break;
@@ -505,7 +505,7 @@ void TIM16_IRQHandler(void)
     default:
       update_leds(0); // Turns the fucking LEDS off apprarently
       break;
-  }
+  }*/
 
 
 
