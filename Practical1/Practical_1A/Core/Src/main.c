@@ -49,7 +49,7 @@ typedef struct{
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DELAY 150;
+#define DELAY 150
 
 /* USER CODE END PD */
 
@@ -248,6 +248,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  /* Simple heartbeat - blink LED0 every 500ms to show code is running
+	      HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
+	      HAL_Delay(250);
+	      HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+	      HAL_Delay(250);*/
+	init_LCD();
+	lcd_command(CLEAR);
+	lcd_putstring("Group 9");
+	lcd_command(LINE_TWO);
+	lcd_putstring("Prac 1");
 
     // TODO: Check pushbuttons to change timer delay
     if (debounce_button(Button0_GPIO_Port, Button0_Pin, 0)) {
