@@ -122,6 +122,9 @@ void mode1(void){
   uint8_t pattern = (1 <<leds.current_led_position);
   update_leds(pattern);
 
+  lcd_command(CLEAR);
+  lcd_putstring("Mode 1");
+
   if (leds.direction == 1){
     if (leds.current_led_position == 7){
       leds.direction = 0;
@@ -149,6 +152,10 @@ void mode2(void){
 
   uint8_t pattern = 0xFF & ~(1<<leds.current_led_position);
   update_leds(pattern);
+
+  lcd_command(CLEAR);
+
+  lcd_putstring("Mode 2");
 
   if (leds.direction == 1){
     if (leds.current_led_position == 7){
@@ -179,7 +186,7 @@ uint8_t debounce_button(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, uint8_t button_i
   if (current_state && !previous_button_state[button_index]) {
         // Button just pressed
     uint32_t current_time = HAL_GetTick();
-    if (current_time - last_button_time > 200) {  // 200ms debounce
+    if (current_time - last_button_time > 250) {  // 200ms debounce
       button_pressed = 1;
       last_button_time = current_time;
     }
@@ -254,11 +261,6 @@ int main(void)
 	      HAL_Delay(250);
 	      HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
 	      HAL_Delay(250);*/
-	init_LCD();
-	lcd_command(CLEAR);
-	lcd_putstring("Group 9");
-	lcd_command(LINE_TWO);
-	lcd_putstring("Prac 1");
 
     // TODO: Check pushbuttons to change timer delay
     if (debounce_button(Button0_GPIO_Port, Button0_Pin, 0)) {
