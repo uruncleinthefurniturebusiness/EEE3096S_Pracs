@@ -50,7 +50,7 @@ typedef struct{
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DELAY 150
+//#define DELAY 150
 
 /* USER CODE END PD */
 
