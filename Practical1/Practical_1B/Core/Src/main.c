@@ -1,4 +1,7 @@
-/* USER CODE BEGIN Header */
+
+
+/* SMTJOS022 X BHYEBR002 EEE3096S Practical 1B*/
+
 /**
   ******************************************************************************
   * @file           : main.c
@@ -23,11 +26,14 @@
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
 #include "stm32f0xx.h"
+#include <lcd_stm32f0.c>
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 #define MAX_ITER 100
+#define SCALE 1000000
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -44,6 +50,11 @@
 
 /* USER CODE BEGIN PV */
 //TODO: Define and initialise the global varibales required
+
+ int dim[] = {128, 160, 192, 224, 256};
+ uint8_t  start_time, end_time, execution_time;
+ uint64_t check_sum;
+
 /*
   start_time
   end_time
@@ -204,6 +215,36 @@ static void MX_GPIO_Init(void)
 uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations){
   uint64_t mandelbrot_sum = 0;
     //TODO: Complete the function implementation
+
+
+  for (int y = 0; y < height-1; y++){
+	  for (int x = 0; x < width-1; x++){
+		  // Convert to fixed-point coordinates
+		  // x0 = (x/width) * 3.5 - 2.5
+		  int64_t x0 = ((int64_t)x * 3500000 / width) - 2500000;
+		  // y0 = (y/height) * 2.0 - 1.0
+		  int64_t y0 = ((int64_t)y * 2000000 / height) - 1000000;
+		  int64_t xi = 0, yi =0;
+		  int iter = 0;
+
+		  while (iter< max_iterations){
+			  int64_t xi2 = (xi*xi)/SCALE;
+			  int64_t yi2 = (yi*yi)/SCALE;
+
+			  if (xi2 + yi2 > 4 * SCALE) {
+                  break;
+              }
+
+
+			  int64_t temp = xi2-yi2;
+			  yi = (2*xi*yi)/SCALE+y0;
+			  xi = temp + x0;
+			  iter++;
+		  }
+		  mandelbrot_sum = mandelbrot_sum + iter;
+
+	  }
+  }
     
     return mandelbrot_sum;
 
@@ -213,6 +254,29 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations){
     uint64_t mandelbrot_sum = 0;
     //TODO: Complete the function implementation
+    for (int y = 0; y < height-1; y++){
+    	  for (int x = 0; x < width-1; x++){
+    		  // Convert to fixed-point coordinates
+    		  // x0 = (x/width) * 3.5 - 2.5
+    		  double x0 = ((double)x * 3.5 / width) - 2.5;
+    		  // y0 = (y/height) * 2.0 - 1.0
+    		  double y0 = ((double)y * 2.0 / height) - 1.0;
+    		  double xi = 0, yi =0;
+    		  int iter = 0;
+
+    		  while (iter< max_iterations && (xi*xi+yi*yi)<=4){
+
+    			  double temp = xi*xi-yi*yi;
+    			  yi = (2*xi*yi)+y0;
+    			  xi = temp + x0;
+    			  iter++;
+    		  }
+    		  mandelbrot_sum = mandelbrot_sum + iter;
+
+    	  }
+      }
+
+
     
     return mandelbrot_sum;
 }
