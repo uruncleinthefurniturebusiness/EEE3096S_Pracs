@@ -110,22 +110,25 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   //TODO: Turn on LED 0 to signify the start of the operation
-  
+  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, 1);
+
 
   //TODO: Record the start time
+  start_time = HAL_Get_Tick();
   
   
   //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
-  
+  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[0], dim[0], MAX_ITER);
 
   //TODO: Record the end time
-  
+  end_time = HAL_Get_Tick();
 
   //TODO: Calculate the execution time
+  execution_time = end_time - start_time;
   
 
   //TODO: Turn on LED 1 to signify the end of the operation
-  
+  HAL_GPIO_WritePin(LED0_GPIO_Port, LED1_Pin, 1);
 
   //TODO: Hold the LEDs on for a 1s delay
   
