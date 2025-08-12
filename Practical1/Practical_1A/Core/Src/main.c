@@ -38,6 +38,12 @@ typedef enum{
   MODE_3,
 } led_mode_t;
 
+typedef enum{
+	SPARKLE_PATTERN,
+	SPARKLE_DELAY,
+	SP
+};
+
 typedef struct{
   led_mode_t current_mode;
   uint8_t current_led_position;
@@ -176,6 +182,12 @@ void mode2(void){
     }
 
   }
+
+}
+
+void mode3(void){
+	lcd_command(CLEAR);
+	lcd_putstring("Mode 3");
 
 }
 
@@ -507,10 +519,10 @@ void TIM16_IRQHandler(void)
     leds.current_led_position = 0;
     leds.direction = 1;
   }
-  //else if (debounce_button(Button3_GPIO_Port, Button3_Pin, 3)){
-      //leds.current_mode = MODE_3;
-      //stuff
+  else if (debounce_button(Button3_GPIO_Port, Button3_Pin, 3)){
+      leds.current_mode = MODE_3;
 
+  }
 //s
   switch (leds.current_mode){
     case MODE_1:
@@ -519,9 +531,9 @@ void TIM16_IRQHandler(void)
     case MODE_2:
       mode2();
       break;
-    //case MODE_3:
-      //mode3();
-      //break;
+    case MODE_3:
+      mode3();
+      break;
     default:
       update_leds(0); // Turns the fucking LEDS off apprarently
       break;
