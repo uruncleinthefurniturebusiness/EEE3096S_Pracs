@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import logging
 import os
-    
+
+
 def get_color(
-    iteration_count, 
-    max_iter=1000
-    ):
+        iteration_count,
+        max_iter=1000
+):
     if iteration_count == max_iter:
         return (0, 0, 0)
     percentage = (iteration_count * 100) // max_iter
@@ -18,11 +19,12 @@ def get_color(
     else:
         return (255, (percentage - 66) * 7, 0)
 
+
 def generate_mandelbrot_image(
-    width, 
-    height, 
-    max_iter=100
-    ):
+        width,
+        height,
+        max_iter=100
+):
     image = np.zeros((height, width, 3), dtype=np.uint8)
     mandelbrot_sum = 0
     for y in range(height):
@@ -30,19 +32,20 @@ def generate_mandelbrot_image(
             x0 = (x / width) * 3.5 - 2.5
             y0 = (y / height) * 2.0 - 1.0
             xi = yi = iteration = 0
-            while iteration < max_iter and (xi*xi + yi*yi) <= 4:
-                tmp = xi*xi - yi*yi + x0
-                yi = 2*xi*yi + y0
+            while iteration < max_iter and (xi * xi + yi * yi) <= 4:
+                tmp = xi * xi - yi * yi + x0
+                yi = 2 * xi * yi + y0
                 xi = tmp
                 iteration += 1
             mandelbrot_sum += iteration
             image[y, x] = get_color(iteration, max_iter)
     return mandelbrot_sum, image
 
+
 def format_table(
-    rows, 
-    headers
-    ):
+        rows,
+        headers
+):
     # Find max width for each column
     cols = list(zip(*([headers] + rows)))
     col_widths = [max(len(str(item)) for item in col) for col in cols]
@@ -52,6 +55,7 @@ def format_table(
     for row in rows:
         table.append(fmt.format(*row))
     return '\n'.join(table)
+
 
 def main():
     os.makedirs("Mandelbrot_results", exist_ok=True)
@@ -67,10 +71,10 @@ def main():
         datefmt="%Y-%m-%d %H:%M",
         level=logging.INFO
     )
-    
+
     # Get logger instance
     logger = logging.getLogger(__name__)
-    
+
     image_resolutions = [
         [128, 128],
         [160, 160],
@@ -80,7 +84,7 @@ def main():
     ]
 
     logger.info("Mandelbrot Performance Benchmarking")
-    
+
     results = []
     for i in range(len(image_resolutions)):
         width = image_resolutions[i][0]
@@ -108,6 +112,7 @@ def main():
     print(table)
     logger.info("\n" + table)
     logger.info("Mandelbrot benchmarking completed")
+
 
 if __name__ == "__main__":
     main()

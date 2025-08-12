@@ -52,7 +52,7 @@
 //TODO: Define and initialise the global varibales required
 
  int dim[] = {128, 160, 192, 224, 256};
- uint8_t  start_time, end_time, execution_time;
+ uint32_t  start_time, end_time, execution_time;
  uint64_t check_sum;
 
 /*
@@ -114,21 +114,56 @@ int main(void)
 
 
   //TODO: Record the start time
-  start_time = HAL_Get_Tick();
+  //start_time = HAL_Get_Tick();
   
   
   //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
-  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[0], dim[0], MAX_ITER);
+  //check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[0], dim[0], MAX_ITER);
 
   //TODO: Record the end time
-  end_time = HAL_Get_Tick();
+  //end_time = HAL_Get_Tick();
 
   //TODO: Calculate the execution time
-  execution_time = end_time - start_time;
+  //execution_time = end_time - start_time;
+
+  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+
+      // Arrays to hold results for viewing in debugger
+      uint64_t checksums[num_sizes];
+      uint32_t exec_times[num_sizes];
+
+      for (int i = 0; i < num_sizes; i++) {
+          // Record start time
+          start_time = HAL_GetTick();
+
+          // Run fixed-point Mandelbrot with square image dim[i] x dim[i]
+          check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
+
+          // Record end time
+          end_time = HAL_GetTick();
+
+          execution_time = end_time - start_time;
+
+          // Store results
+          checksums[i] = check_sum;
+          exec_times[i] = execution_time;
+
+          // Toggle LED1 on to signal completion of this run
+          HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+
+          // Hold LEDs on for 1 second
+          HAL_Delay(1000);
+
+          // Turn off LED1 before next run
+          HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+      }
+
+      // Turn off LED0 after all runs done
+      HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
   
 
   //TODO: Turn on LED 1 to signify the end of the operation
-  HAL_GPIO_WritePin(LED0_GPIO_Port, LED1_Pin, 1);
+
 
   //TODO: Hold the LEDs on for a 1s delay
   
