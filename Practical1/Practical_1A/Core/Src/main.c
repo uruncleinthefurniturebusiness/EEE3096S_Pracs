@@ -78,7 +78,7 @@ static void MX_TIM16_Init(void);
 /* USER CODE BEGIN PFP */
 void TIM16_IRQHandler(void);
 
-// This is our shit funcitons, 
+// This is our shit functions,
 void update_leds(uint8_t pattern);
 void init_led_system(void);
 
@@ -507,7 +507,11 @@ void TIM16_IRQHandler(void)
     leds.current_led_position = 0;
     leds.direction = 1;
   }
-//sex
+  //else if (debounce_button(Button3_GPIO_Port, Button3_Pin, 3)){
+      //leds.current_mode = MODE_3;
+      //stuff
+
+//s
   switch (leds.current_mode){
     case MODE_1:
       mode1();
@@ -515,6 +519,9 @@ void TIM16_IRQHandler(void)
     case MODE_2:
       mode2();
       break;
+    //case MODE_3:
+      //mode3();
+      //break;
     default:
       update_leds(0); // Turns the fucking LEDS off apprarently
       break;
