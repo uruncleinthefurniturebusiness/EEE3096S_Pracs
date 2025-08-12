@@ -52,8 +52,8 @@
 //TODO: Define and initialise the global varibales required
 
  int dim[] = {128, 160, 192, 224, 256};
- uint32_t  start_time, end_time, execution_time;
- uint64_t check_sum;
+ uint32_t  start_time=0, end_time=0, execution_time=0;
+ uint64_t check_sum=0;
 
 /*
   start_time
