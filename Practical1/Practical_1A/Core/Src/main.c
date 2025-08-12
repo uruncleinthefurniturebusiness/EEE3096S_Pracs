@@ -1,4 +1,4 @@
-/* SMTJOS022 X BHYEBR002 EEE3096S Practical 1*/
+/* SMTJOS022 X BHYEBR002 EEE3096S Practical 1A*/
 /**
   ******************************************************************************
   * @file           : main.c
