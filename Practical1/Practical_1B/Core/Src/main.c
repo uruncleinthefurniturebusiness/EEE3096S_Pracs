@@ -26,7 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
 #include "stm32f0xx.h"
-#include <lcd_stm32f0.c>
+//#include <lcd_stm32f0.c>
 #include <stdlib.h>
 /* USER CODE END Includes */
 
@@ -54,6 +54,8 @@
  int dim[] = {128, 160, 192, 224, 256};
  uint32_t  start_time=0, end_time=0, execution_time=0;
  uint64_t check_sum=0;
+ uint64_t checksums[5];
+ uint32_t exec_times[5];
 
 /*
   start_time
@@ -110,7 +112,7 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   //TODO: Turn on LED 0 to signify the start of the operation
-  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, 1);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
 
   //TODO: Record the start time
@@ -129,8 +131,6 @@ int main(void)
   const int num_sizes = sizeof(dim) / sizeof(dim[0]);
 
       // Arrays to hold results for viewing in debugger
-      uint64_t checksums[num_sizes];
-      uint32_t exec_times[num_sizes];
 
       for (int i = 0; i < num_sizes; i++) {
           // Record start time
@@ -149,17 +149,17 @@ int main(void)
           exec_times[i] = execution_time;
 
           // Toggle LED1 on to signal completion of this run
-          HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
           // Hold LEDs on for 1 second
           HAL_Delay(1000);
 
           // Turn off LED1 before next run
-          HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
       }
 
       // Turn off LED0 after all runs done
-      HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
   
 
   //TODO: Turn on LED 1 to signify the end of the operation
@@ -310,11 +310,8 @@ uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations){
     			  iter++;
     		  }
     		  mandelbrot_sum = mandelbrot_sum + iter;
-
     	  }
       }
-
-
     
     return mandelbrot_sum;
 }
