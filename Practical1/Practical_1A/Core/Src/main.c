@@ -41,8 +41,14 @@ typedef enum{
 typedef enum{
 	SPARKLE_PATTERN,
 	SPARKLE_DELAY,
-	SP
-};
+	SPARKLE_OFF
+} led_state_t;
+
+led_state_t led_state = SPARKLE_PATTERN;
+uint32_t led_timer = 0;
+uint8_t led_counter = 0;
+uint8_t led_array[8];
+uint8_t led_init = 0;
 
 typedef struct{
   led_mode_t current_mode;
@@ -73,7 +79,6 @@ TIM_HandleTypeDef htim16;
 led_system_t leds;
 uint32_t last_button_time = 0;
 uint8_t previous_button_state[4] = {0};
-
 
 /* USER CODE END PV */
 
@@ -186,8 +191,29 @@ void mode2(void){
 }
 
 void mode3(void){
+	uint32_t time = HAL_GetTick();
+
 	lcd_command(CLEAR);
 	lcd_putstring("Mode 3");
+	update_leds(0);
+
+	switch (led_state){
+
+	case SPARKLE_PATTERN:
+		led_init = rand() % 256;
+		update_leds(led_init);
+		break;
+
+	case SPARKLE_DELAY:
+
+		break;
+
+	case SPARKLE_OFF:
+
+		break;
+
+	}
+
 
 }
 
@@ -521,7 +547,7 @@ void TIM16_IRQHandler(void)
   }
   else if (debounce_button(Button3_GPIO_Port, Button3_Pin, 3)){
       leds.current_mode = MODE_3;
-
+      led_state = SPARKLE_PATTERN;
   }
 //s
   switch (leds.current_mode){
