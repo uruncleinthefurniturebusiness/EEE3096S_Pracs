@@ -39,12 +39,11 @@ typedef enum{
 } led_mode_t;
 
 typedef enum{
-	SPARKLE_PATTERN,
-	SPARKLE_TRANS,
+	SPARKLE_ON,
 	SPARKLE_OFF
 } led_state_t;
 
-led_state_t led_state = SPARKLE_PATTERN;
+led_state_t led_state = SPARKLE_ON;
 uint32_t led_timer = 0;
 uint8_t led_counter = 0;
 uint8_t led_array[8];
@@ -191,47 +190,38 @@ void mode2(void){
 }
 
 void mode3(void){
-	uint32_t time = HAL_GetTick();
 
 	lcd_command(CLEAR);
 	lcd_putstring("Mode 3"); // initializes display screen with mode number
-	switch (led_state){ //switch statement checks which state the leds are in
+	 //switch statement checks which state the leds are in
 
-	case SPARKLE_PATTERN: //initializes random led pattern
+	if (led_state == SPARKLE_ON){ //initializes random led pattern
 		led_init = rand() % 256;
 		update_leds(led_init); //displays random number on leds
 
 		led_counter = 0;
-		int i = 0;
 
-		while (i<8){
-			if (((1<<i) & led_init) == 1){ //bitwise and operation which is used to add leds which are on to the led array
-				led_array[led_counter++] = 1;
+		for (int i = 0; i < 8; i++){
+			if ((1<<i) & led_init){ //bitwise and operation which is used to add leds which are on to the led array
+				led_array[led_counter++] = i;
 			}
-			i++;
 		}
 
-		led_timer = time + (100 + (rand() % 1401));
-		led_state = SPARKLE_TRANS;
-		break;
-
-	case SPARKLE_TRANS:
-		if ((int32_t)(time - led_timer) >= 0) {
+		//led_timer = (rand() % 1401);
+		led_state = SPARKLE_OFF;
+	}
+	else if (led_state == SPARKLE_OFF){
 			if (led_counter > 0) {
 				int j = rand() % led_counter;
 				led_init &= ~(1 << led_array[j]);
 				update_leds(led_init);
 
-
-			}else{
-				led_state = SPARKLE_PATTERN;
+				led_array[j] = led_array[led_counter - 1];
+				led_counter--;
 			}
-		}
-		break;
-
-	case SPARKLE_OFF:
-
-		break;
+			else if (led_counter == 0){
+				led_state = SPARKLE_ON;
+			}
 
 	}
 
@@ -344,7 +334,7 @@ int main(void)
     }
 
 
-    
+
 
   }
   /* USER CODE END 3 */
@@ -568,7 +558,7 @@ void TIM16_IRQHandler(void)
   }
   else if (debounce_button(Button3_GPIO_Port, Button3_Pin, 3)){
       leds.current_mode = MODE_3;
-      led_state = SPARKLE_PATTERN;
+      led_state = SPARKLE_ON;
   }
 //s
   switch (leds.current_mode){
