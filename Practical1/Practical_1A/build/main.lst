@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   31:Core/Src/main.c **** 
   32:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   33:Core/Src/main.c **** /* USER CODE BEGIN PTD */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 2
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 2
 
 
   34:Core/Src/main.c **** typedef enum{
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   88:Core/Src/main.c **** static void MX_TIM16_Init(void);
   89:Core/Src/main.c **** /* USER CODE BEGIN PFP */
   90:Core/Src/main.c **** void TIM16_IRQHandler(void);
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 3
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 3
 
 
   91:Core/Src/main.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  145:Core/Src/main.c ****       leds.current_led_position++;
  146:Core/Src/main.c ****     }
  147:Core/Src/main.c ****   }
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 4
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 4
 
 
  148:Core/Src/main.c ****   else {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  202:Core/Src/main.c **** 		update_leds(led_init); //displays random number on leds
  203:Core/Src/main.c **** 
  204:Core/Src/main.c **** 		led_counter = 0;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 5
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 5
 
 
  205:Core/Src/main.c **** 		int i = 0;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  259:Core/Src/main.c **** 
  260:Core/Src/main.c **** 
  261:Core/Src/main.c **** /* USER CODE END 0 */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 6
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 6
 
 
  262:Core/Src/main.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  316:Core/Src/main.c **** 
  317:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
  318:Core/Src/main.c **** 	  /* Simple heartbeat - blink LED0 every 500ms to show code is running
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 7
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 7
 
 
  319:Core/Src/main.c **** 	      HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  373:Core/Src/main.c ****   LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_HSI);
  374:Core/Src/main.c **** 
  375:Core/Src/main.c ****    /* Wait till System clock is ready */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 8
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 8
 
 
  376:Core/Src/main.c ****   while(LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_HSI)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   28              		@ args = 0, pretend = 0, frame = 40
   29              		@ frame_needed = 0, uses_anonymous_args = 0
   30 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 9
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 9
 
 
   31              	.LCFI0:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   17:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****     [..]  
   18:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****       Workarounds:
   19:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****       (#) For AHB & APB peripherals, a dummy read to the peripheral register has been
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 10
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 10
 
 
   20:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****           inserted in each LL_{BUS}_GRP{x}_EnableClock() function.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   74:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #if defined(DMA2)
   75:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #define LL_AHB1_GRP1_PERIPH_DMA2           RCC_AHBENR_DMA2EN
   76:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #endif /*DMA2*/
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 11
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 11
 
 
   77:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #define LL_AHB1_GRP1_PERIPH_SRAM           RCC_AHBENR_SRAMEN
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  131:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #endif /*I2C2*/
  132:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #if defined(USB)
  133:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #define LL_APB1_GRP1_PERIPH_USB            RCC_APB1ENR_USBEN
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 12
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 12
 
 
  134:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** #endif /* USB */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  188:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****   */
  189:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** 
  190:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h **** /** @defgroup BUS_LL_EF_AHB1 AHB1
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 13
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 13
 
 
  191:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****   * @{
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   77              		.loc 2 230 10 view .LVU9
   78 0028 0392     		str	r2, [sp, #12]
  231:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****   (void)tmpreg;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 14
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 14
 
 
   79              		.loc 2 231 3 is_stmt 1 view .LVU10
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  121              		.loc 2 230 3 view .LVU25
  230:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h ****   (void)tmpreg;
  122              		.loc 2 230 12 is_stmt 0 view .LVU26
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 15
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 15
 
 
  123 0048 5B69     		ldr	r3, [r3, #20]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   37:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @{
   38:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
   39:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 16
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 16
 
 
   40:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /* Private types -------------------------------------------------------------*/
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   94:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
   95:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @}
   96:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 17
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 17
 
 
   97:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** #endif /* USE_FULL_LL_DRIVER */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  151:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
  152:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  153:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /** @defgroup GPIO_LL_EC_SPEED Output Speed
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 18
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 18
 
 
  154:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @{
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  208:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  __VALUE__ Value to be written in the register
  209:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval None
  210:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 19
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 19
 
 
  211:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** #define LL_GPIO_WriteReg(__INSTANCE__, __REG__, __VALUE__) WRITE_REG(__INSTANCE__->__REG__, (__VALU
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  265:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval None
  266:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
  267:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE void LL_GPIO_SetPinMode(GPIO_TypeDef *GPIOx, uint32_t Pin, uint32_t Mode)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 20
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 20
 
 
  268:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  322:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  323:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
  324:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 21
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 21
 
 
  325:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  379:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         supply and load conditions for each speed.
  380:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @rmtoll OSPEEDR      OSPEEDy       LL_GPIO_SetPinSpeed
  381:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 22
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 22
 
 
  382:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  Pin This parameter can be one of the following values:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  436:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_SPEED_FREQ_LOW
  437:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_SPEED_FREQ_MEDIUM
  438:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_SPEED_FREQ_HIGH
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 23
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 23
 
 
  439:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  493:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  494:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
  495:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 24
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 24
 
 
  496:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  550:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_3
  551:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_4
  552:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_5
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 25
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 25
 
 
  553:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_6
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  607:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
  608:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  Pin This parameter can be one of the following values:
  609:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 26
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 26
 
 
  610:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  664:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE void LL_GPIO_LockPin(GPIO_TypeDef *GPIOx, uint32_t PinMask)
  665:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
  666:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   __IO uint32_t temp;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 27
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 27
 
 
  667:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   WRITE_REG(GPIOx->LCKR, GPIO_LCKR_LCKK | PinMask);
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  721:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  722:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
  723:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @brief  Return full input data register value for a dedicated port.
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 28
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 28
 
 
  724:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @rmtoll IDR          IDy           LL_GPIO_ReadInputPort
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  778:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval Output data register value of port
  779:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
  780:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE uint32_t LL_GPIO_ReadOutputPort(GPIO_TypeDef *GPIOx)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 29
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 29
 
 
  781:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  835:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_ALL
  836:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval None
  837:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 30
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 30
 
 
  838:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE void LL_GPIO_SetOutputPin(GPIO_TypeDef *GPIOx, uint32_t PinMask)
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  155 005a AB62     		str	r3, [r5, #40]
  156              	.LVL5:
  157              		.loc 3 869 3 is_stmt 0 view .LVU37
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 31
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 31
 
 
  158              	.LBE55:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  452:Core/Src/main.c ****   /**/
  453:Core/Src/main.c ****   LL_GPIO_ResetOutputPin(LED5_GPIO_Port, LED5_Pin);
  199              		.loc 1 453 3 is_stmt 1 view .LVU50
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 32
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 32
 
 
  200              	.LBB62:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  240              		.loc 1 464 24 is_stmt 0 view .LVU66
  241 007c 0896     		str	r6, [sp, #32]
  465:Core/Src/main.c ****   LL_GPIO_Init(Button0_GPIO_Port, &GPIO_InitStruct);
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 33
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 33
 
 
  242              		.loc 1 465 3 is_stmt 1 view .LVU67
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  479:Core/Src/main.c ****   /**/
  480:Core/Src/main.c ****   GPIO_InitStruct.Pin = Button3_Pin;
  283              		.loc 1 480 3 view .LVU82
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 34
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 34
 
 
  284              		.loc 1 480 23 is_stmt 0 view .LVU83
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  495:Core/Src/main.c ****   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
  324              		.loc 1 495 3 is_stmt 1 view .LVU102
  325              		.loc 1 495 24 is_stmt 0 view .LVU103
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 35
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 35
 
 
  326 00dc 0596     		str	r6, [sp, #20]
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  365              		.loc 1 510 23 is_stmt 0 view .LVU123
  366 0104 4046     		mov	r0, r8
  367 0106 0490     		str	r0, [sp, #16]
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 36
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 36
 
 
  511:Core/Src/main.c ****   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  525:Core/Src/main.c ****   /**/
  526:Core/Src/main.c ****   GPIO_InitStruct.Pin = LED5_Pin;
  408              		.loc 1 526 3 view .LVU144
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 37
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 37
 
 
  409              		.loc 1 526 23 is_stmt 0 view .LVU145
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  450 0158 FFF7FEFF 		bl	LL_GPIO_Init
  451              	.LVL22:
  540:Core/Src/main.c **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 38
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 38
 
 
  541:Core/Src/main.c ****   /**/
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  497              	delay:
  498              	.LVL24:
  499              	.LFB348:
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 39
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 39
 
 
  500              		.file 4 "Core/Inc/lcd_stm32f0.c"
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   54:Core/Inc/lcd_stm32f0.c **** //              As we are using a microcontroller to control the LCD
   55:Core/Inc/lcd_stm32f0.c **** //              we use 4-bit mode to save on number of lines used to
   56:Core/Inc/lcd_stm32f0.c **** //              connect to the LCD. This means that an 8-bit command
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 40
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 40
 
 
   57:Core/Inc/lcd_stm32f0.c **** //              must be split into two sets of 4-bits (upper and lower)
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  111:Core/Inc/lcd_stm32f0.c ****     }
  112:Core/Inc/lcd_stm32f0.c **** 
  113:Core/Inc/lcd_stm32f0.c ****     pulse_strobe ();			// Send data
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 41
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 41
 
 
  114:Core/Inc/lcd_stm32f0.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  168:Core/Inc/lcd_stm32f0.c **** {
  169:Core/Inc/lcd_stm32f0.c ****     RCC->AHBENR |= RCC_AHBENR_GPIOAEN;	// Connect clocks to GPIO A, B and C
  170:Core/Inc/lcd_stm32f0.c ****     RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 42
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 42
 
 
  171:Core/Inc/lcd_stm32f0.c ****     RCC->AHBENR |= RCC_AHBENR_GPIOCEN;
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  225:Core/Inc/lcd_stm32f0.c ****         	GPIOB->BSRR |= LCD_D5_SET;                 
  226:Core/Inc/lcd_stm32f0.c **** 	}
  227:Core/Inc/lcd_stm32f0.c ****         else				//  else RESET D5
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 43
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 43
 
 
  228:Core/Inc/lcd_stm32f0.c ****         {
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  282:Core/Inc/lcd_stm32f0.c **** }
  283:Core/Inc/lcd_stm32f0.c **** 
  284:Core/Inc/lcd_stm32f0.c **** //====================================================================
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 44
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 44
 
 
  285:Core/Inc/lcd_stm32f0.c **** // WRITE A STRING TO THE LCD - LCD_PutString(ptr_String)
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  508              	.LCFI3:
  509              		.cfi_def_cfa_offset 8
  332:Core/Inc/lcd_stm32f0.c **** 	  volatile unsigned int counter;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 45
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 45
 
 
  510              		.loc 4 332 4 is_stmt 1 view .LVU180
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  557              	pulse_strobe:
  558              	.LFB347:
  309:Core/Inc/lcd_stm32f0.c ****     delay(20);				// Delay
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 46
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 46
 
 
  559              		.loc 4 309 1 is_stmt 1 view -0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  320:Core/Inc/lcd_stm32f0.c **** }
  602              		.loc 4 320 17 view .LVU203
  603 002c 1D43     		orrs	r5, r3
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 47
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 47
 
 
  604 002e A561     		str	r5, [r4, #24]
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  209:Core/Inc/lcd_stm32f0.c ****         }
  651              		.loc 4 209 10 is_stmt 1 view .LVU213
  209:Core/Inc/lcd_stm32f0.c ****         }
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 48
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 48
 
 
  652              		.loc 4 209 15 is_stmt 0 view .LVU214
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  693 0046 E306     		lsls	r3, r4, #27
  694 0048 43D5     		bpl	.L17
  234:Core/Inc/lcd_stm32f0.c ****         }
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 49
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 49
 
 
  695              		.loc 4 234 10 is_stmt 1 view .LVU228
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  736 007c 9361     		str	r3, [r2, #24]
  737              	.L22:
  263:Core/Inc/lcd_stm32f0.c ****         {
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 50
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 50
 
 
  738              		.loc 4 263 9 is_stmt 1 view .LVU242
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  779 00a8 9169     		ldr	r1, [r2, #24]
  205:Core/Inc/lcd_stm32f0.c ****         }
  780              		.loc 4 205 22 view .LVU256
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 51
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 51
 
 
  781 00aa 8023     		movs	r3, #128
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  824 00e0 9022     		movs	r2, #144
  825 00e2 D205     		lsls	r2, r2, #23
  826 00e4 9169     		ldr	r1, [r2, #24]
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 52
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 52
 
 
  250:Core/Inc/lcd_stm32f0.c ****         }
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  871 011c 00080048 		.word	1207961600
  872 0120 00040048 		.word	1207960576
  873              		.cfi_endproc
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 53
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 53
 
 
  874              	.LFE345:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  919              		.loc 4 294 12 is_stmt 1 view .LVU288
  294:Core/Inc/lcd_stm32f0.c ****     {
  920              		.loc 4 294 20 is_stmt 0 view .LVU289
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 54
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 54
 
 
  921 0010 285D     		ldrb	r0, [r5, r4]
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   77:Core/Inc/lcd_stm32f0.c ****     {
  967              		.loc 4 77 8 view .LVU300
  968 0012 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 55
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 55
 
 
  969 0014 49DB     		blt	.L50
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  104:Core/Inc/lcd_stm32f0.c ****     {
  1010              		.loc 4 104 5 is_stmt 1 view .LVU314
  104:Core/Inc/lcd_stm32f0.c ****     {
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 56
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 56
 
 
  1011              		.loc 4 104 8 is_stmt 0 view .LVU315
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1051              		.loc 4 127 21 view .LVU329
  1052 0076 8023     		movs	r3, #128
  1053 0078 5B01     		lsls	r3, r3, #5
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 57
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 57
 
 
  1054 007a 0B43     		orrs	r3, r1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1095 00a8 10BD     		pop	{r4, pc}
  1096              	.LVL49:
  1097              	.L50:
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 58
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 58
 
 
   79:Core/Inc/lcd_stm32f0.c ****     }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1140 00e0 0B43     		orrs	r3, r1
  1141 00e2 9361     		str	r3, [r2, #24]
  1142 00e4 B7E7     		b	.L41
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 59
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 59
 
 
  1143              	.LVL50:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1185              		.loc 4 149 18 view .LVU366
  1186 0118 8023     		movs	r3, #128
  1187 011a 5B04     		lsls	r3, r3, #17
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 60
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 60
 
 
  1188 011c 0B43     		orrs	r3, r1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  171:Core/Inc/lcd_stm32f0.c **** 
  1236              		.loc 4 171 8 is_stmt 0 view .LVU375
  1237 0018 5969     		ldr	r1, [r3, #20]
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 61
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 61
 
 
  171:Core/Inc/lcd_stm32f0.c **** 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1279              		.loc 4 180 5 view .LVU388
  1280 0054 3220     		movs	r0, #50
  1281 0056 FFF7FEFF 		bl	lcd_command
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 62
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 62
 
 
  1282              	.LVL54:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1331              		.loc 1 109 5 is_stmt 1 view .LVU395
  109:Core/Src/main.c ****     HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, (pattern & 0x02) ? GPIO_PIN_SET : GPIO_PIN_RESET);
  1332              		.loc 1 109 81 is_stmt 0 view .LVU396
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 63
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 63
 
 
  1333 0004 0125     		movs	r5, #1
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1374 003a 2A40     		ands	r2, r5
  113:Core/Src/main.c ****     HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, (pattern & 0x20) ? GPIO_PIN_SET : GPIO_PIN_RESET);
  1375              		.loc 1 113 5 view .LVU410
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 64
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 64
 
 
  1376 003c 1021     		movs	r1, #16
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1420              		.global	init_led_system
  1421              		.syntax unified
  1422              		.code	16
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 65
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 65
 
 
  1423              		.thumb_func
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1466              		.cfi_endproc
  1467              	.LFE350:
  1469              		.section	.rodata.mode1.str1.4,"aMS",%progbits,1
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 66
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 66
 
 
  1470              		.align	2
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  139:Core/Src/main.c ****     if (leds.current_led_position == 7){
  1514              		.loc 1 139 11 is_stmt 0 view .LVU444
  1515 001c A378     		ldrb	r3, [r4, #2]
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 67
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 67
 
 
  139:Core/Src/main.c ****     if (leds.current_led_position == 7){
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1554              		.loc 1 141 7 is_stmt 1 view .LVU460
  141:Core/Src/main.c ****       leds.current_led_position = 6;
  1555              		.loc 1 141 22 is_stmt 0 view .LVU461
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 68
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 68
 
 
  1556 0044 044B     		ldr	r3, .L69
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1603              		.loc 1 164 37 is_stmt 0 view .LVU469
  1604 0002 164C     		ldr	r4, .L78
  1605 0004 6378     		ldrb	r3, [r4, #1]
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 69
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 69
 
 
  164:Core/Src/main.c ****   update_leds(pattern);
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1644              		.loc 1 183 7 is_stmt 1 view .LVU485
  183:Core/Src/main.c ****     }
  1645              		.loc 1 183 33 is_stmt 0 view .LVU486
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 70
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 70
 
 
  1646 0032 5A70     		strb	r2, [r3, #1]
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1687 005c 00000000 		.word	leds
  1688 0060 00000000 		.word	.LC5
  1689              		.cfi_endproc
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 71
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 71
 
 
  1690              	.LFE352:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1738              	.LBB68:
  219:Core/Src/main.c **** 			if (led_counter > 0) {
  1739              		.loc 1 219 3 view .LVU507
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 72
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 72
 
 
  219:Core/Src/main.c **** 			if (led_counter > 0) {
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1781 004e FFF7FEFF 		bl	update_leds
  1782              	.LVL88:
  204:Core/Src/main.c **** 		int i = 0;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 73
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 73
 
 
  1783              		.loc 1 204 3 view .LVU521
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1823 007a 5854     		strb	r0, [r3, r1]
  1824 007c EDE7     		b	.L85
  1825              	.L89:
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 74
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 74
 
 
  214:Core/Src/main.c **** 		led_state = SPARKLE_TRANS;
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  222:Core/Src/main.c **** 				update_leds(led_init);
  1866              		.loc 1 222 5 is_stmt 1 view .LVU550
  222:Core/Src/main.c **** 				update_leds(led_init);
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 75
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 75
 
 
  1867              		.loc 1 222 33 is_stmt 0 view .LVU551
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1917              		.cfi_def_cfa_offset 16
  1918              		.cfi_offset 4, -16
  1919              		.cfi_offset 5, -12
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 76
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 76
 
 
  1920              		.cfi_offset 6, -8
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  1959              	.LVL102:
  250:Core/Src/main.c ****     }
  1960              		.loc 1 250 7 view .LVU573
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 77
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 77
 
 
  250:Core/Src/main.c ****     }
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2004              		.align	1
  2005              		.global	TIM16_IRQHandler
  2006              		.syntax unified
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 78
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 78
 
 
  2007              		.code	16
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  565:Core/Src/main.c ****     leds.current_mode = MODE_2;
  566:Core/Src/main.c ****     leds.current_led_position = 0;
  567:Core/Src/main.c ****     leds.direction = 1;
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 79
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 79
 
 
  568:Core/Src/main.c ****   }
@@ -4714,7 +4714,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  582:Core/Src/main.c ****       mode3();
  583:Core/Src/main.c ****       break;
  584:Core/Src/main.c ****     default:
- 585:Core/Src/main.c ****       update_leds(0); // Turns the fucking LEDS off apprarently
+ 585:Core/Src/main.c ****       update_leds(0); // Turns the fucking LEDS off
  586:Core/Src/main.c ****       break;
  587:Core/Src/main.c ****   }
  588:Core/Src/main.c **** 
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  564:Core/Src/main.c ****     leds.current_mode = MODE_2;
  2077              		.loc 1 564 11 discriminator 1 view .LVU605
  2078 0046 0028     		cmp	r0, #0
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 80
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 80
 
 
  2079 0048 07D0     		beq	.L101
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2119 0078 FFF7FEFF 		bl	mode2
  2120              	.LVL115:
  580:Core/Src/main.c ****     case MODE_3:
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 81
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 81
 
 
  2121              		.loc 1 580 7 view .LVU620
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  604:Core/Src/main.c ****   __disable_irq();
  2161              		.loc 1 604 3 view .LVU627
  2162              	.LBB73:
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 82
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 82
 
 
  2163              	.LBI73:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
   54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 83
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 83
 
 
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
  111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 84
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 84
 
 
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2186              		.syntax unified
  2187              		.code	16
  2188              		.thumb_func
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 85
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 85
 
 
  2190              	MX_TIM16_Init:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2228              		.loc 1 411 3 is_stmt 1 view .LVU648
  411:Core/Src/main.c ****   {
  2229              		.loc 1 411 7 is_stmt 0 view .LVU649
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 86
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 86
 
 
  2230 001c FFF7FEFF 		bl	HAL_TIM_Base_Init
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   43:Drivers/CMSIS/Include/core_cm0.h **** 
   44:Drivers/CMSIS/Include/core_cm0.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
   45:Drivers/CMSIS/Include/core_cm0.h ****      Function definitions in header files are used to allow 'inlining'.
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 87
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 87
 
 
   46:Drivers/CMSIS/Include/core_cm0.h **** 
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  100:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
  101:Drivers/CMSIS/Include/core_cm0.h ****   #endif
  102:Drivers/CMSIS/Include/core_cm0.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 88
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 88
 
 
  103:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __TASKING__ )
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  157:Drivers/CMSIS/Include/core_cm0.h ****     \li for automatic generation of peripheral register debug information.
  158:Drivers/CMSIS/Include/core_cm0.h **** */
  159:Drivers/CMSIS/Include/core_cm0.h **** #ifdef __cplusplus
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 89
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 89
 
 
  160:Drivers/CMSIS/Include/core_cm0.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions */
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  214:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_N_Msk                         (1UL << APSR_N_Pos)                            /*!< APSR
  215:Drivers/CMSIS/Include/core_cm0.h **** 
  216:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_Z_Pos                         30U                                            /*!< APSR
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 90
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 90
 
 
  217:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_Z_Msk                         (1UL << APSR_Z_Pos)                            /*!< APSR
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  271:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_C_Msk                         (1UL << xPSR_C_Pos)                            /*!< xPSR
  272:Drivers/CMSIS/Include/core_cm0.h **** 
  273:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_V_Pos                         28U                                            /*!< xPSR
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 91
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 91
 
 
  274:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_V_Msk                         (1UL << xPSR_V_Pos)                            /*!< xPSR
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  328:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_NVIC */
  329:Drivers/CMSIS/Include/core_cm0.h **** 
  330:Drivers/CMSIS/Include/core_cm0.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 92
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 92
 
 
  331:Drivers/CMSIS/Include/core_cm0.h **** /**
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  385:Drivers/CMSIS/Include/core_cm0.h **** 
  386:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23U                                            /*!< SCB 
  387:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 93
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 93
 
 
  388:Drivers/CMSIS/Include/core_cm0.h **** 
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  442:Drivers/CMSIS/Include/core_cm0.h ****   @{
  443:Drivers/CMSIS/Include/core_cm0.h ****  */
  444:Drivers/CMSIS/Include/core_cm0.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 94
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 94
 
 
  445:Drivers/CMSIS/Include/core_cm0.h **** /**
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  499:Drivers/CMSIS/Include/core_cm0.h **** 
  500:Drivers/CMSIS/Include/core_cm0.h **** /**
  501:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup    CMSIS_core_register
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 95
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 95
 
 
  502:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup   CMSIS_core_bitfield     Core register bit field macros
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  556:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_Core_FunctionInterface Functions and Instructions Reference
  557:Drivers/CMSIS/Include/core_cm0.h **** */
  558:Drivers/CMSIS/Include/core_cm0.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 96
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 96
 
 
  559:Drivers/CMSIS/Include/core_cm0.h **** 
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  613:Drivers/CMSIS/Include/core_cm0.h **** 
  614:Drivers/CMSIS/Include/core_cm0.h **** #define __NVIC_SetPriorityGrouping(X) (void)(X)
  615:Drivers/CMSIS/Include/core_cm0.h **** #define __NVIC_GetPriorityGrouping()  (0U)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 97
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 97
 
 
  616:Drivers/CMSIS/Include/core_cm0.h **** 
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2281              		.cfi_startproc
  2282              		@ args = 0, pretend = 0, frame = 0
  2283              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 98
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 98
 
 
  2284 0000 10B5     		push	{r4, lr}
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   44:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
   45:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
   46:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined (FLASH) || defined (SYSCFG) || defined (DBGMCU)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 99
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 99
 
 
   47:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  101:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #define LL_SYSCFG_USART1TX_RMP_DMA1CH4     ((SYSCFG_CFGR1_USART1TX_DMA_RMP >> 8U) | SYSCFG_CFGR1_US
  102:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #endif /*SYSCFG_CFGR1_USART1TX_DMA_RMP*/
  103:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined (SYSCFG_CFGR1_USART1RX_DMA_RMP)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 100
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 100
 
 
  104:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #define LL_SYSCFG_USART1RX_RMP_DMA1CH3     ((SYSCFG_CFGR1_USART1RX_DMA_RMP >> 8U) | (uint32_t)0x000
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  158:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @{
  159:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
  160:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_CFGR1_TIM16_DMA_RMP)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 101
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 101
 
 
  161:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined (SYSCFG_CFGR1_TIM16_DMA_RMP2)
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  215:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #define LL_SYSCFG_I2C_FASTMODEPLUS_PA10    SYSCFG_CFGR1_I2C_FMP_PA10 /*!< Enable Fast Mode Plus on 
  216:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #endif /*SYSCFG_CFGR1_I2C_FMP_PA10*/
  217:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 102
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 102
 
 
  218:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @}
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  272:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****                                                                            CortexM0 with Break Inpu
  273:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
  274:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @}
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 103
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 103
 
 
  275:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  329:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
  330:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /* Exported functions --------------------------------------------------------*/
  331:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /** @defgroup SYSTEM_LL_Exported_Functions SYSTEM Exported Functions
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 104
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 104
 
 
  332:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @{
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  386:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_IR_MOD_USART1
  387:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_IR_MOD_USART4
  388:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 105
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 105
 
 
  389:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_GetIRModEnvelopeSignal(void)
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  443:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @retval None
  444:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
  445:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE void LL_SYSCFG_SetRemapDMA_I2C(uint32_t Remap)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 106
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 106
 
 
  446:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** {
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  500:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
  501:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @brief  Enable PIN pair PA11/12 mapped instead of PA9/10 (control the mapping of either
  502:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * PA9/10 or PA11/12 pin pair on small pin-count packages)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 107
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 107
 
 
  503:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_CFGR1 PA11_PA12_RMP  LL_SYSCFG_EnablePinRemap
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  557:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         SYSCFG_CFGR1 I2C_FMP_I2C1  LL_SYSCFG_DisableFastModePlus\n
  558:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         SYSCFG_CFGR1 I2C_FMP_I2C2  LL_SYSCFG_DisableFastModePlus\n
  559:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         SYSCFG_CFGR1 I2C_FMP_PA9   LL_SYSCFG_DisableFastModePlus\n
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 108
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 108
 
 
  560:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         SYSCFG_CFGR1 I2C_FMP_PA10  LL_SYSCFG_DisableFastModePlus
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  614:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_EXTI_LINE7
  615:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_EXTI_LINE8
  616:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_EXTI_LINE9
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 109
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 109
 
 
  617:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_EXTI_LINE10
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  671:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_EXTI_PORTF
  672:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *
  673:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         (*) value not defined in all devices
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 110
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 110
 
 
  674:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  728:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE2_SR_RTC_TSTAMP)
  729:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
  730:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @brief  Check if RTC Tamper and TimeStamp interrupt occurred or not (EXTI line 19).
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 111
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 111
 
 
  731:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE2 SR_RTC_TSTAMP  LL_SYSCFG_IsActiveFlag_RTC_TSTAMP
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  785:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
  786:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #endif /* SYSCFG_ITLINE4_SR_CLK_CTRL */
  787:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 112
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 112
 
 
  788:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE5_SR_EXTI0)
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  842:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_IsActiveFlag_EXTI4(void)
  843:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** {
  844:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   return (READ_BIT(SYSCFG->IT_LINE_SR[7], SYSCFG_ITLINE7_SR_EXTI4) == (SYSCFG_ITLINE7_SR_EXTI4));
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 113
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 113
 
 
  845:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  899:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE7 SR_EXTI9      LL_SYSCFG_IsActiveFlag_EXTI9
  900:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @retval State of bit (1 or 0).
  901:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 114
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 114
 
 
  902:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_IsActiveFlag_EXTI9(void)
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  956:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE7_SR_EXTI14)
  957:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
  958:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @brief  Check if EXTI line 14 interrupt occurred or not.
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 115
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 115
 
 
  959:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE7 SR_EXTI14     LL_SYSCFG_IsActiveFlag_EXTI14
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1013:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
 1014:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #endif /* SYSCFG_ITLINE9_SR_DMA1_CH1 */
 1015:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 116
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 116
 
 
 1016:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE10_SR_DMA1_CH2)
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1070:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_IsActiveFlag_DMA1_CH4(void)
 1071:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** {
 1072:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   return (READ_BIT(SYSCFG->IT_LINE_SR[11], SYSCFG_ITLINE11_SR_DMA1_CH4) == (SYSCFG_ITLINE11_SR_DMA1
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 117
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 117
 
 
 1073:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1127:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE11 SR_DMA2_CH4   LL_SYSCFG_IsActiveFlag_DMA2_CH4
 1128:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @retval State of bit (1 or 0).
 1129:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 118
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 118
 
 
 1130:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_IsActiveFlag_DMA2_CH4(void)
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1184:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE13_SR_TIM1_BRK)
 1185:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
 1186:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @brief  Check if Timer 1 break interrupt occurred or not.
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 119
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 119
 
 
 1187:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE13 SR_TIM1_BRK   LL_SYSCFG_IsActiveFlag_TIM1_BRK
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1241:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
 1242:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #endif /* SYSCFG_ITLINE14_SR_TIM1_CC */
 1243:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 120
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 120
 
 
 1244:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE15_SR_TIM2_GLB)
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1298:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_IsActiveFlag_TIM7(void)
 1299:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** {
 1300:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   return (READ_BIT(SYSCFG->IT_LINE_SR[18], SYSCFG_ITLINE18_SR_TIM7_GLB) == (SYSCFG_ITLINE18_SR_TIM7
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 121
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 121
 
 
 1301:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1355:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE23 SR_I2C1_GLB   LL_SYSCFG_IsActiveFlag_I2C1
 1356:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @retval State of bit (1 or 0).
 1357:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 122
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 122
 
 
 1358:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_SYSCFG_IsActiveFlag_I2C1(void)
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1412:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE28_SR_USART2_GLB)
 1413:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
 1414:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @brief  Check if USART2 interrupt occurred or not, combined with EXTI line 26.
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 123
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 123
 
 
 1415:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll SYSCFG_ITLINE28 SR_USART2_GLB  LL_SYSCFG_IsActiveFlag_USART2
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1469:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** }
 1470:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #endif /* SYSCFG_ITLINE29_SR_USART6_GLB */
 1471:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 124
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 124
 
 
 1472:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** #if defined(SYSCFG_ITLINE29_SR_USART7_GLB)
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1526:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_TIMBREAK_PVD (*)
 1527:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_TIMBREAK_SRAM_PARITY
 1528:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         @arg @ref LL_SYSCFG_TIMBREAK_LOCKUP
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 125
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 125
 
 
 1529:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1583:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** 
 1584:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** /**
 1585:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @}
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 126
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 126
 
 
 1586:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1640:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @brief  Enable the Debug Module during STANDBY mode
 1641:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @rmtoll DBGMCU_CR    DBG_STANDBY   LL_DBGMCU_EnableDBGStandbyMode
 1642:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @retval None
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 127
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 127
 
 
 1643:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1697:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         DBGMCU_APB1FZ DBG_TIM14_STOP          LL_DBGMCU_APB1_GRP1_UnFreezePeriph\n
 1698:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         DBGMCU_APB1FZ DBG_RTC_STOP            LL_DBGMCU_APB1_GRP1_UnFreezePeriph\n
 1699:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         DBGMCU_APB1FZ DBG_WWDG_STOP           LL_DBGMCU_APB1_GRP1_UnFreezePeriph\n
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 128
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 128
 
 
 1700:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         DBGMCU_APB1FZ DBG_IWDG_STOP           LL_DBGMCU_APB1_GRP1_UnFreezePeriph\n
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1754:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *
 1755:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   *         (*) value not defined in all devices
 1756:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   * @retval None
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 129
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 129
 
 
 1757:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h ****   */
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1790:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** __STATIC_INLINE uint32_t LL_FLASH_GetLatency(void)
  2312              		.loc 7 1790 26 view .LVU667
  2313              	.LBB80:
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 130
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 130
 
 
 1791:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h **** {
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   38:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
   39:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /* Private types -------------------------------------------------------------*/
   40:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /* Private variables ---------------------------------------------------------*/
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 131
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 131
 
 
   41:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /* Private constants ---------------------------------------------------------*/
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
   95:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
   96:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
   97:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 132
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 132
 
 
   98:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @}
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  152:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
  153:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @}
  154:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 133
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 133
 
 
  155:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  209:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @}
  210:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
  211:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 134
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 134
 
 
  212:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /** @defgroup RCC_LL_EC_SYS_CLKSOURCE  System clock switch
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  266:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /** @defgroup RCC_LL_EC_MCO1SOURCE  MCO1 SOURCE selection
  267:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @{
  268:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 135
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 135
 
 
  269:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_NOCLOCK          RCC_CFGR_MCOSEL_NOCLOCK      /*!< MCO output disabled, n
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  323:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_USART2_CLKSOURCE_PCLK1      (uint32_t)((RCC_POSITION_USART2SW << 24) | RCC_CFGR3_USA
  324:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_USART2_CLKSOURCE_SYSCLK     (uint32_t)((RCC_POSITION_USART2SW << 24) | RCC_CFGR3_USA
  325:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_USART2_CLKSOURCE_LSE        (uint32_t)((RCC_POSITION_USART2SW << 24) | RCC_CFGR3_USA
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 136
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 136
 
 
  326:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_USART2_CLKSOURCE_HSI        (uint32_t)((RCC_POSITION_USART2SW << 24) | RCC_CFGR3_USA
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  380:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_USART2_CLKSOURCE            RCC_POSITION_USART2SW /*!< USART2 Clock source selection
  381:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #endif /* RCC_CFGR3_USART2SW */
  382:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #if defined(RCC_CFGR3_USART3SW)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 137
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 137
 
 
  383:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_USART3_CLKSOURCE            RCC_POSITION_USART3SW /*!< USART3 Clock source selection
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  437:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PLL_MUL_8                   RCC_CFGR_PLLMUL8  /*!< PLL input clock*8 */
  438:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PLL_MUL_9                   RCC_CFGR_PLLMUL9  /*!< PLL input clock*9 */
  439:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PLL_MUL_10                  RCC_CFGR_PLLMUL10  /*!< PLL input clock*10 */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 138
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 138
 
 
  440:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PLL_MUL_11                  RCC_CFGR_PLLMUL11  /*!< PLL input clock*11 */
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  494:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PREDIV_DIV_9                RCC_CFGR2_PREDIV_DIV9   /*!< PREDIV input clock divided 
  495:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PREDIV_DIV_10               RCC_CFGR2_PREDIV_DIV10  /*!< PREDIV input clock divided 
  496:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PREDIV_DIV_11               RCC_CFGR2_PREDIV_DIV11  /*!< PREDIV input clock divided 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 139
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 139
 
 
  497:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define LL_RCC_PREDIV_DIV_12               RCC_CFGR2_PREDIV_DIV12  /*!< PREDIV input clock divided 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  551:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLL_MUL_5
  552:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLL_MUL_6
  553:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLL_MUL_7
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 140
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 140
 
 
  554:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLL_MUL_8
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  608:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #define __LL_RCC_CALC_PLLCLK_FREQ(__INPUTFREQ__, __PLLMUL__) \
  609:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****           ((__INPUTFREQ__) * ((((__PLLMUL__) & RCC_CFGR_PLLMUL) >> RCC_POSITION_PLLMUL) + 2U))
  610:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** #endif /* RCC_PLLSRC_PREDIV1_SUPPORT */
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 141
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 141
 
 
  611:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  665:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @retval None
  666:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
  667:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSE_EnableCSS(void)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 142
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 142
 
 
  668:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** {
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  722:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
  723:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
  724:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @brief  Check if HSE oscillator Ready
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 143
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 143
 
 
  725:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @rmtoll CR           HSERDY        LL_RCC_HSE_IsReady
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  760:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
  761:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
  762:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @brief  Check if HSI clock is ready
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 144
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 144
 
 
  763:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @rmtoll CR           HSIRDY        LL_RCC_HSI_IsReady
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2363 002a F821     		movs	r1, #248
  2364 002c 8A43     		bics	r2, r1
  2365 002e 7839     		subs	r1, r1, #120
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 145
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 145
 
 
  2366 0030 0A43     		orrs	r2, r1
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  839:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @retval State of bit (1 or 0).
  840:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
  841:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_HSI48_IsReady(void)
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 146
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 146
 
 
  842:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** {
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  896:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
  897:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @brief  ADC interface can turn on the HSI14 oscillator
  898:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @rmtoll CR2          HSI14DIS      LL_RCC_HSI14_EnableADCControl
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 147
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 147
 
 
  899:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @retval None
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  953:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @}
  954:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
  955:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 148
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 148
 
 
  956:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /** @defgroup RCC_LL_EF_LSE LSE
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1010:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   */
 1011:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_LSE_SetDriveCapability(uint32_t LSEDrive)
 1012:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** {
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 149
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 149
 
 
 1013:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   MODIFY_REG(RCC->BDCR, RCC_BDCR_LSEDRV, LSEDrive);
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1067:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** 
 1068:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** /**
 1069:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @brief  Check if LSI is Ready
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 150
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 150
 
 
 1070:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   * @rmtoll CSR          LSIRDY        LL_RCC_LSI_IsReady
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
 1124:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_2
 1125:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_4
 1126:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_8
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 151
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 151
 
 
 1127:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_16
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2401              	.LBB91:
  2402              	.LBI91:
 1098:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h **** {
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 152
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 152
 
 
  2403              		.loc 8 1098 22 view .LVU694
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2443 0062 0028     		cmp	r0, #0
  2444 0064 00D1     		bne	.L122
  387:Core/Src/main.c **** 
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 153
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 153
 
 
  2445              		.loc 1 387 1 view .LVU709
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  273:Core/Src/main.c ****   lcd_command(LINE_TWO);
  2495              		.loc 1 273 3 view .LVU714
  2496 000c 1C48     		ldr	r0, .L131
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 154
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 154
 
 
  2497 000e FFF7FEFF 		bl	lcd_putstring
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2540              	.LVL143:
  343:Core/Src/main.c ****     }
  2541              		.loc 1 343 7 view .LVU726
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 155
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 155
 
 
  2542 004a 2000     		movs	r0, r4
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2582 0078 054A     		ldr	r2, .L131+16
  2583 007a DA60     		str	r2, [r3, #12]
  2584 007c E1E7     		b	.L128
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 156
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 156
 
 
  2585              	.L132:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2651              		.align	2
  2654              	led_timer:
  2655 0000 00000000 		.space	4
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 157
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 157
 
 
  2656              		.global	led_state
@@ -9380,89 +9380,89 @@ ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 1
  2674              		.file 19 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
  2675              		.file 20 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_dma.h"
  2676              		.file 21 "<built-in>"
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 158
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 158
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:485    .text.MX_GPIO_Init:00000180 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:491    .text.delay:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:497    .text.delay:00000000 delay
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:551    .text.pulse_strobe:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:557    .text.pulse_strobe:00000000 pulse_strobe
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:611    .text.pulse_strobe:00000034 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:616    .text.lcd_putchar:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:622    .text.lcd_putchar:00000000 lcd_putchar
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:871    .text.lcd_putchar:0000011c $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:877    .text.lcd_putstring:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:883    .text.lcd_putstring:00000000 lcd_putstring
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:935    .text.lcd_command:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:941    .text.lcd_command:00000000 lcd_command
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1194   .text.lcd_command:00000124 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1201   .text.init_LCD:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1207   .text.init_LCD:00000000 init_LCD
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1301   .text.init_LCD:00000070 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1309   .text.update_leds:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1315   .text.update_leds:00000000 update_leds
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1414   .text.update_leds:00000068 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1419   .text.init_led_system:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1425   .text.init_led_system:00000000 init_led_system
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1465   .text.init_led_system:00000020 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2621   .bss.leds:00000000 leds
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1470   .rodata.mode1.str1.4:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1474   .text.mode1:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1480   .text.mode1:00000000 mode1
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1575   .text.mode1:00000058 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1581   .rodata.mode2.str1.4:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1585   .text.mode2:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1591   .text.mode2:00000000 mode2
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1687   .text.mode2:0000005c $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1693   .rodata.mode3.str1.4:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1698   .text.mode3:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1704   .text.mode3:00000000 mode3
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1889   .text.mode3:000000c0 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2660   .bss.led_state:00000000 led_state
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2654   .bss.led_timer:00000000 led_timer
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2647   .bss.led_counter:00000000 led_counter
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2634   .bss.led_init:00000000 led_init
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2641   .bss.led_array:00000000 led_array
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1901   .text.debounce_button:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1907   .text.debounce_button:00000000 debounce_button
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:1998   .text.debounce_button:00000040 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2607   .bss.previous_button_state:00000000 previous_button_state
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2614   .bss.last_button_time:00000000 last_button_time
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2004   .text.TIM16_IRQHandler:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2010   .text.TIM16_IRQHandler:00000000 TIM16_IRQHandler
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2140   .text.TIM16_IRQHandler:0000008c $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2628   .bss.htim16:00000000 htim16
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2147   .text.Error_Handler:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2153   .text.Error_Handler:00000000 Error_Handler
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2185   .text.MX_TIM16_Init:00000000 $t
-ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s 			page 159
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:485    .text.MX_GPIO_Init:00000180 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:491    .text.delay:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:497    .text.delay:00000000 delay
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:551    .text.pulse_strobe:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:557    .text.pulse_strobe:00000000 pulse_strobe
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:611    .text.pulse_strobe:00000034 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:616    .text.lcd_putchar:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:622    .text.lcd_putchar:00000000 lcd_putchar
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:871    .text.lcd_putchar:0000011c $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:877    .text.lcd_putstring:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:883    .text.lcd_putstring:00000000 lcd_putstring
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:935    .text.lcd_command:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:941    .text.lcd_command:00000000 lcd_command
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1194   .text.lcd_command:00000124 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1201   .text.init_LCD:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1207   .text.init_LCD:00000000 init_LCD
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1301   .text.init_LCD:00000070 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1309   .text.update_leds:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1315   .text.update_leds:00000000 update_leds
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1414   .text.update_leds:00000068 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1419   .text.init_led_system:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1425   .text.init_led_system:00000000 init_led_system
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1465   .text.init_led_system:00000020 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2621   .bss.leds:00000000 leds
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1470   .rodata.mode1.str1.4:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1474   .text.mode1:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1480   .text.mode1:00000000 mode1
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1575   .text.mode1:00000058 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1581   .rodata.mode2.str1.4:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1585   .text.mode2:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1591   .text.mode2:00000000 mode2
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1687   .text.mode2:0000005c $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1693   .rodata.mode3.str1.4:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1698   .text.mode3:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1704   .text.mode3:00000000 mode3
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1889   .text.mode3:000000c0 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2660   .bss.led_state:00000000 led_state
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2654   .bss.led_timer:00000000 led_timer
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2647   .bss.led_counter:00000000 led_counter
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2634   .bss.led_init:00000000 led_init
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2641   .bss.led_array:00000000 led_array
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1901   .text.debounce_button:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1907   .text.debounce_button:00000000 debounce_button
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:1998   .text.debounce_button:00000040 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2607   .bss.previous_button_state:00000000 previous_button_state
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2614   .bss.last_button_time:00000000 last_button_time
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2004   .text.TIM16_IRQHandler:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2010   .text.TIM16_IRQHandler:00000000 TIM16_IRQHandler
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2140   .text.TIM16_IRQHandler:0000008c $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2628   .bss.htim16:00000000 htim16
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2147   .text.Error_Handler:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2153   .text.Error_Handler:00000000 Error_Handler
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2185   .text.MX_TIM16_Init:00000000 $t
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s 			page 159
 
 
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2190   .text.MX_TIM16_Init:00000000 MX_TIM16_Init
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2263   .text.MX_TIM16_Init:00000034 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2272   .text.SystemClock_Config:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2278   .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2455   .text.SystemClock_Config:0000006c $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2463   .rodata.main.str1.4:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2470   .text.main:00000000 $t
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2476   .text.main:00000000 main
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2588   .text.main:00000080 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2600   .bss.delay_mode.0:00000000 delay_mode.0
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2601   .bss.delay_mode.0:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2604   .bss.previous_button_state:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2611   .bss.last_button_time:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2618   .bss.leds:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2625   .bss.htim16:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2635   .bss.led_init:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2638   .bss.led_array:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2648   .bss.led_counter:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2651   .bss.led_timer:00000000 $d
-C:\Users\Ebrahim\AppData\Local\Temp\ccDUBfPx.s:2661   .bss.led_state:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2190   .text.MX_TIM16_Init:00000000 MX_TIM16_Init
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2263   .text.MX_TIM16_Init:00000034 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2272   .text.SystemClock_Config:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2278   .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2455   .text.SystemClock_Config:0000006c $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2463   .rodata.main.str1.4:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2470   .text.main:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2476   .text.main:00000000 main
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2588   .text.main:00000080 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2600   .bss.delay_mode.0:00000000 delay_mode.0
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2601   .bss.delay_mode.0:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2604   .bss.previous_button_state:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2611   .bss.last_button_time:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2618   .bss.leds:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2625   .bss.htim16:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2635   .bss.led_init:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2638   .bss.led_array:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2648   .bss.led_counter:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2651   .bss.led_timer:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccjmvUQP.s:2661   .bss.led_state:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

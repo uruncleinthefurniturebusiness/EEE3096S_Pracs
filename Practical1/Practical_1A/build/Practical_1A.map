@@ -2204,20 +2204,20 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00009ebf      0x82a build/stm32f0xx_ll_utils.o
  .debug_line    0x0000a6e9       0x74 build/startup_stm32f051x8.o
 
-.debug_str      0x00000000     0x2e6d
- .debug_str     0x00000000     0x2e6d build/main.o
-                                0xedd (size before relaxing)
- .debug_str     0x00002e6d      0x209 build/stm32f0xx_it.o
- .debug_str     0x00002e6d      0x27a build/system_stm32f0xx.o
- .debug_str     0x00002e6d      0x3aa build/stm32f0xx_ll_gpio.o
- .debug_str     0x00002e6d      0x6ee build/stm32f0xx_hal.o
- .debug_str     0x00002e6d      0x62f build/stm32f0xx_hal_cortex.o
- .debug_str     0x00002e6d      0x409 build/stm32f0xx_hal_gpio.o
- .debug_str     0x00002e6d     0x168e build/stm32f0xx_hal_tim.o
- .debug_str     0x00002e6d      0xe9a build/stm32f0xx_hal_tim_ex.o
- .debug_str     0x00002e6d      0x71d build/stm32f0xx_hal_msp.o
- .debug_str     0x00002e6d      0x610 build/stm32f0xx_ll_utils.o
- .debug_str     0x00002e6d       0xae build/startup_stm32f051x8.o
+.debug_str      0x00000000     0x2de0
+ .debug_str     0x00000000     0x2de0 build/main.o
+                                0xecc (size before relaxing)
+ .debug_str     0x00002de0      0x209 build/stm32f0xx_it.o
+ .debug_str     0x00002de0      0x27a build/system_stm32f0xx.o
+ .debug_str     0x00002de0      0x3aa build/stm32f0xx_ll_gpio.o
+ .debug_str     0x00002de0      0x6ee build/stm32f0xx_hal.o
+ .debug_str     0x00002de0      0x62f build/stm32f0xx_hal_cortex.o
+ .debug_str     0x00002de0      0x409 build/stm32f0xx_hal_gpio.o
+ .debug_str     0x00002de0     0x168e build/stm32f0xx_hal_tim.o
+ .debug_str     0x00002de0      0xe9a build/stm32f0xx_hal_tim_ex.o
+ .debug_str     0x00002de0      0x71d build/stm32f0xx_hal_msp.o
+ .debug_str     0x00002de0      0x610 build/stm32f0xx_ll_utils.o
+ .debug_str     0x00002de0       0xae build/startup_stm32f051x8.o
 
 .comment        0x00000000       0x86
  .comment       0x00000000       0x86 build/main.o

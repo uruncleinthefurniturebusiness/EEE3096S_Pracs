@@ -582,7 +582,7 @@ void TIM16_IRQHandler(void)
       mode3();
       break;
     default:
-      update_leds(0); // Turns the fucking LEDS off apprarently
+      update_leds(0); // Turns the fucking LEDS off
       break;
   }
 
