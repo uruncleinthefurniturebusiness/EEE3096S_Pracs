@@ -53,8 +53,8 @@
 
  int dim[] = {128, 160, 192, 224, 256};
  uint32_t  start_time=0, end_time=0, execution_time=0;
- uint64_t check_sum=0;
- uint64_t checksums[5];
+ uint32_t check_sum=0;
+ uint32_t checksums[5];
  uint32_t exec_times[5];
 
 /*
@@ -259,22 +259,22 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
 	  for (int x = 0; x < width-1; x++){
 		  // Convert to fixed-point coordinates
 		  // x0 = (x/width) * 3.5 - 2.5
-		  int64_t x0 = ((int64_t)x * 3500000 / width) - 2500000;
+		  int32_t x0 = ((int64_t)x * 3500000 / width) - 2500000;
 		  // y0 = (y/height) * 2.0 - 1.0
-		  int64_t y0 = ((int64_t)y * 2000000 / height) - 1000000;
-		  int64_t xi = 0, yi =0;
+		  int32_t y0 = ((int64_t)y * 2000000 / height) - 1000000;
+		  int32_t xi = 0, yi =0;
 		  int iter = 0;
 
 		  while (iter< max_iterations){
-			  int64_t xi2 = (xi*xi)/SCALE;
-			  int64_t yi2 = (yi*yi)/SCALE;
+			  int32_t xi2 = (xi*xi)/SCALE;
+			  int32_t yi2 = (yi*yi)/SCALE;
 
 			  if (xi2 + yi2 > 4 * SCALE) {
                   break;
               }
 
 
-			  int64_t temp = xi2-yi2;
+			  int32_t temp = xi2-yi2;
 			  yi = (2*xi*yi)/SCALE+y0;
 			  xi = temp + x0;
 			  iter++;
