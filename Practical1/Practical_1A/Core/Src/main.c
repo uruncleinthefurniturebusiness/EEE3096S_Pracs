@@ -138,20 +138,20 @@ void mode1(void){
 
   if (leds.direction == 1){
     if (leds.current_led_position == 7){
-      leds.direction = 0;
+      leds.direction = 0; 					// Turn around if end reached
       leds.current_led_position = 6;
     }
     else{
-      leds.current_led_position++;
+      leds.current_led_position++;   // left movement
     }
   }
   else {
-    if (leds.current_led_position == 0){
+    if (leds.current_led_position == 0){  // Turn around if end reached
       leds.direction = 1;
       leds.current_led_position = 1;
     }
     else{
-      leds.current_led_position--;
+      leds.current_led_position--;						// right movements
     }
 
   }
