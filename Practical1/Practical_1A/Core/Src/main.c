@@ -40,7 +40,7 @@ typedef enum{
 
 typedef enum{
 	SPARKLE_PATTERN,
-	SPARKLE_DELAY,
+	SPARKLE_TRANS,
 	SPARKLE_OFF
 } led_state_t;
 
@@ -194,18 +194,39 @@ void mode3(void){
 	uint32_t time = HAL_GetTick();
 
 	lcd_command(CLEAR);
-	lcd_putstring("Mode 3");
-	update_leds(0);
+	lcd_putstring("Mode 3"); // initializes display screen with mode number
+	switch (led_state){ //switch statement checks which state the leds are in
 
-	switch (led_state){
-
-	case SPARKLE_PATTERN:
+	case SPARKLE_PATTERN: //initializes random led pattern
 		led_init = rand() % 256;
-		update_leds(led_init);
+		update_leds(led_init); //displays random number on leds
+
+		led_counter = 0;
+		int i = 0;
+
+		while (i<8){
+			if (((1<<i) & led_init) == 1){ //bitwise and operation which is used to add leds which are on to the led array
+				led_array[led_counter++] = 1;
+			}
+			i++;
+		}
+
+		led_timer = time + (100 + (rand() % 1401));
+		led_state = SPARKLE_TRANS;
 		break;
 
-	case SPARKLE_DELAY:
+	case SPARKLE_TRANS:
+		if ((int32_t)(time - led_timer) >= 0) {
+			if (led_counter > 0) {
+				int j = rand() % led_counter;
+				led_init &= ~(1 << led_array[j]);
+				update_leds(led_init);
 
+
+			}else{
+				led_state = SPARKLE_PATTERN;
+			}
+		}
 		break;
 
 	case SPARKLE_OFF:
