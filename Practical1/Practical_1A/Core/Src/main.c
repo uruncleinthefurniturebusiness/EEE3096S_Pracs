@@ -189,6 +189,48 @@ void mode2(void){
 
 }
 
+/*void mode3(void) {
+    lcd_command(CLEAR);
+    lcd_putstring("Mode 3"); // Show mode number
+
+    if (led_timer > 0) {
+        led_timer--;   // Wait until timer reaches zero
+        return;
+    }
+
+    if (led_state == SPARKLE_ON) {
+        led_init = rand() % 256;
+        update_leds(led_init);
+
+        led_counter = 0;
+        for (int i = 0; i < 8; i++) {
+            if ((1 << i) & led_init) {
+                led_array[led_counter++] = i;
+            }
+        }
+        led_state = SPARKLE_OFF;
+
+        // Random delay before turning LEDs off (e.g. 200–800 ms)
+        led_timer = (rand() % 600) + 200;
+    }
+    else if (led_state == SPARKLE_OFF) {
+        if (led_counter > 0) {
+            int j = rand() % led_counter;
+            led_init &= ~(1 << led_array[j]);
+            update_leds(led_init);
+
+            led_array[j] = led_array[led_counter - 1];
+            led_counter--;
+        } else {
+            led_state = SPARKLE_ON;
+        }
+
+        // Random delay before next sparkle step
+        led_timer = (rand() % 400) + 100;
+    }
+}*/
+
+
 void mode3(void){
 
 	lcd_command(CLEAR);
@@ -559,6 +601,7 @@ void TIM16_IRQHandler(void)
   else if (debounce_button(Button3_GPIO_Port, Button3_Pin, 3)){
       leds.current_mode = MODE_3;
       led_state = SPARKLE_ON;
+      led_timer =0;
   }
 //s
   switch (leds.current_mode){
@@ -569,8 +612,13 @@ void TIM16_IRQHandler(void)
       mode2();
       break;
     case MODE_3:
-      mode3();
-      break;
+    	 // Decrement sparkle delay counter each tick
+    	            if (led_timer > 0) {
+    	                led_timer--;
+    	            } else {
+    	                mode3(); // sparkle step
+    	            }
+    	            break;
     default:
       update_leds(0); // Turns the fucking LEDS off
       break;
