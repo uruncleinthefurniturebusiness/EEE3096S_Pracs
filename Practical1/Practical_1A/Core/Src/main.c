@@ -190,7 +190,6 @@ void mode2(void){
 }
 
 void mode3(void){
-	uint32_t time = HAL_GetTick();
 
 	lcd_command(CLEAR);
 	lcd_putstring("Mode 3"); // initializes display screen with mode number
@@ -208,11 +207,10 @@ void mode3(void){
 			}
 		}
 
-		led_timer = time + (100 + (rand() % 1401));
+		//led_timer = (rand() % 1401);
 		led_state = SPARKLE_OFF;
 	}
 	else if (led_state == SPARKLE_OFF){
-		if ((int32_t)(time - led_timer) >= 0) {
 			if (led_counter > 0) {
 				int j = rand() % led_counter;
 				led_init &= ~(1 << led_array[j]);
@@ -224,7 +222,7 @@ void mode3(void){
 			else if (led_counter == 0){
 				led_state = SPARKLE_ON;
 			}
-		}
+
 	}
 
 
@@ -336,7 +334,7 @@ int main(void)
     }
 
 
-    
+
 
   }
   /* USER CODE END 3 */
@@ -574,7 +572,7 @@ void TIM16_IRQHandler(void)
       mode3();
       break;
     default:
-      update_leds(0); // Turns the fucking LEDS off apprarently
+      update_leds(0); // Turns the fucking LEDS off
       break;
   }
 
