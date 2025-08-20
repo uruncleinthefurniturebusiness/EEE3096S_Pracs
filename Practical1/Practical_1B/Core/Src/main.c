@@ -111,21 +111,16 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  //TODO: Turn on LED 0 to signify the start of the operation
+  
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
 
-  //TODO: Record the start time
   //start_time = HAL_Get_Tick();
   
-  
-  //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
   //check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[0], dim[0], MAX_ITER);
-
-  //TODO: Record the end time
+  
   //end_time = HAL_Get_Tick();
-
-  //TODO: Calculate the execution time
+  
   //execution_time = end_time - start_time;
 
   const int num_sizes = sizeof(dim) / sizeof(dim[0]);
@@ -133,13 +128,12 @@ int main(void)
       // Arrays to hold results for viewing in debugger
 
       for (int i = 0; i < num_sizes; i++) {
-          // Record start time
+          
           start_time = HAL_GetTick();
 
-          // Run fixed-point Mandelbrot with square image dim[i] x dim[i]
           check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
 
-          // Record end time
+          
           end_time = HAL_GetTick();
 
           execution_time = end_time - start_time;
