@@ -36,7 +36,7 @@ ASM_Main:
 
 main_loop:
 	STR R2, [R1, #0x14]
-	LDR R3, SHORT_DELAY_CNT
+	LDR R3, LONG_DELAY_CNT
 
 delay:
 	SUBS R3, R3, #1
@@ -55,5 +55,5 @@ GPIOB_BASE:  		.word 0x48000400
 MODER_OUTPUT: 		.word 0x5555
 
 @ TODO: Add your own values for these delays
-LONG_DELAY_CNT: 	.word 0x14FFFF
-SHORT_DELAY_CNT: 	.word 0x0A2FFF
+LONG_DELAY_CNT: 	.word 0x155CC0
+SHORT_DELAY_CNT: 	.word 0x0927C0
