@@ -34,15 +34,61 @@ ASM_Main:
 
 @ TODO: Add code, labels and logic for button checks and LED patterns
 
+
 main_loop:
-	STR R2, [R1, #0x14]
-	LDR R3, LONG_DELAY_CNT
+	LDR R3, GPIOA_BASE
+	LDR R3, [R3, #0x10]
 
-delay:
-	SUBS R3, R3, #1
-	BNE delay
+	STR R2, [R1, #0x14] @ updates LEDs while no button is pressed
 
-	ADDS R2, R2, #1
+
+	LDR R5, =1
+	MOV R7, R3
+	ANDS R7, R5 @
+	CMP R7, #0 @ compares R3 and 2 (switch 1), Z flag updated
+	BEQ fast_delay_2
+
+	LDR R5, =2 @ loads the value of 1 into R5
+	MOV R7, R3
+	ANDS R7, R5 @
+	CMP R7, #0 @ compares R3 and 0 (switch 0), Z flag updated
+	BEQ fast_delay
+
+
+	LDR R5, =4 @ SWITCH 2
+	MOV R7, R3
+	ANDS R7, R5 @
+	CMP R7, #0 @ compares R3 and 4 (switch 2), Z flag updated
+
+
+	LDR R5, =8 @ SWITCH 3
+	MOV R7, R3
+	ANDS R7, R5 @
+	CMP R7, #0 @ compares R3 and 8 (switch 3), Z flag updated
+
+	LDR R4, LONG_DELAY_CNT
+	B delay_1
+
+fast_delay:
+	LDR R4, SHORT_DELAY_CNT
+	B delay_1
+
+fast_delay_2:
+	LDR R4, LONG_DELAY_CNT
+	B delay_2
+
+delay_1:
+	SUBS R4, #1
+	BNE delay_1
+
+	ADDS R2, #1
+	B main_loop
+
+delay_2:
+	SUBS R4, #1
+	BNE delay_2
+
+	ADDS R2, #2
 	B main_loop
 
 
