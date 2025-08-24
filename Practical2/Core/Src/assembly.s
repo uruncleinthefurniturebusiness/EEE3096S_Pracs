@@ -41,6 +41,11 @@ main_loop:
 
 	STR R2, [R1, #0x14] @ updates LEDs while no button is pressed
 
+	LDR R5, =3
+	MOV R7, R3
+	ANDS R7, R5 @
+	CMP R7, #0 @ compares R3 and 2 (switch 1), Z flag updated
+	BEQ fast_increment
 
 	LDR R5, =1
 	MOV R7, R3
@@ -91,6 +96,13 @@ delay_2:
 	ADDS R2, #2
 	B main_loop
 
+fast_increment:
+	LDR R4, SHORT_DELAY_CNT
+	SUBS R4, #1
+	BNE delay_2
+
+	ADDS R2, #2
+	B main_loop
 
 @ LITERALS; DO NOT EDIT
 	.align
