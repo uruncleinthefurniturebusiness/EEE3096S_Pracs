@@ -1378,17 +1378,17 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00002162       0x74 build/startup_stm32f051x8.o
  .debug_line    0x000021d6       0x8b build/assembly.o
 
-.debug_str      0x00000000      0xf2d
- .debug_str     0x00000000      0xf2d build/main.o
+.debug_str      0x00000000      0xebe
+ .debug_str     0x00000000      0xebe build/main.o
                                 0x3ab (size before relaxing)
- .debug_str     0x00000f2d      0x1b7 build/stm32f0xx_it.o
- .debug_str     0x00000f2d      0x1e1 build/stm32f0xx_hal_msp.o
- .debug_str     0x00000f2d      0x63d build/stm32f0xx_hal_rcc.o
- .debug_str     0x00000f2d      0x6c1 build/stm32f0xx_hal.o
- .debug_str     0x00000f2d      0x602 build/stm32f0xx_hal_cortex.o
- .debug_str     0x00000f2d      0x259 build/system_stm32f0xx.o
- .debug_str     0x00000f2d       0xb2 build/startup_stm32f051x8.o
- .debug_str     0x00000f2d       0x91 build/assembly.o
+ .debug_str     0x00000ebe      0x1b7 build/stm32f0xx_it.o
+ .debug_str     0x00000ebe      0x1e1 build/stm32f0xx_hal_msp.o
+ .debug_str     0x00000ebe      0x63d build/stm32f0xx_hal_rcc.o
+ .debug_str     0x00000ebe      0x6c1 build/stm32f0xx_hal.o
+ .debug_str     0x00000ebe      0x602 build/stm32f0xx_hal_cortex.o
+ .debug_str     0x00000ebe      0x259 build/system_stm32f0xx.o
+ .debug_str     0x00000ebe       0xb2 build/startup_stm32f051x8.o
+ .debug_str     0x00000ebe       0xa2 build/assembly.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 build/main.o

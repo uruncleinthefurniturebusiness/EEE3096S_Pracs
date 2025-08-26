@@ -37,69 +37,69 @@ ASM_Main:
 
 main_loop:
 
-	LDR R3, GPIOA_BASE
-	LDR R3, [R3, #0x10]
+	LDR R3, GPIOA_BASE @ initializes input register to R3
+	LDR R3, [R3, #0x10] @ loads the address of the inout register with offset to R3
 
 	STR R2, [R1, #0x14] @ updates LEDs while no button is pressed
 
 	@ For when SW0 and SW1 are pressed togehter, this will cause fast +2
 	LDR R5, =3
-	MOV R7, R3
-	ANDS R7, R5 @
-	CMP R7, #0 @ compares R3 and 2 (switch 1), Z flag updated
-	BEQ fast_increment
+	MOV R7, R3 @ makes a copy of R5 into R7
+	ANDS R7, R5 @ logic AND between R7 and R5, update Z flag
+	CMP R7, #0 @ compares R7 and 0
+	BEQ fast_increment @ branches to the function which increments by 2 and decreases the delay
 
 	@ For when SW0 is held, causing default time +2
 	LDR R5, =1
 	MOV R7, R3
-	ANDS R7, R5 @
-	CMP R7, #0 @ compares R3 and 2 (switch 1), Z flag updated
-	BEQ fast_delay_2
+	ANDS R7, R5
+	CMP R7, #0
+	BEQ long_delay
 
 	@ For when SW1 is held, causing fast +1
-	LDR R5, =2 @ loads the value of 1 into R5
+	LDR R5, =2
 	MOV R7, R3
-	ANDS R7, R5 @
-	CMP R7, #0 @ compares R3 and 0 (switch 0), Z flag updated
+	ANDS R7, R5
+	CMP R7, #0
 	BEQ fast_delay
 
-
-	LDR R5, =4 @ SWITCH 2
+	@ For when SW2 is held, causing 0xAA to be displayed
+	LDR R5, =4
 	MOV R7, R3
-	ANDS R7, R5 @
-	CMP R7, #0 @ compares R3 and 4 (switch 2), Z flag updated
+	ANDS R7, R5
+	CMP R7, #0
 	BEQ sw2_press
 
-
-	LDR R5, =8 @ SWITCH 3
+	@ For when SW3 is held, causing the pattern to freeze
+	LDR R5, =8
 	MOV R7, R3
-	ANDS R7, R5 @
-	CMP R7, #0 @ compares R3 and 8 (switch 3), Z flag updated
+	ANDS R7, R5
+	CMP R7, #0
 	BEQ sw3_press
 
-	LDR R4, LONG_DELAY_CNT
+	LDR R4, LONG_DELAY_CNT @ default delay value
 	B delay_1
 
 fast_delay:
-	LDR R4, SHORT_DELAY_CNT
+	LDR R4, SHORT_DELAY_CNT @ loads the short delay value into R4
 	B delay_1
 
-fast_delay_2:
-	LDR R4, LONG_DELAY_CNT
+long_delay:
+	LDR R4, LONG_DELAY_CNT @ loads the long delay value into R4
 	B delay_2
 
 delay_1:
-	SUBS R4, #1
-	BNE delay_1
+	SUBS R4, #1 @ subtracts 1 from R4
+	BNE delay_1 @ once R4 = 0, Z flag = 1 and exits loop
 
-	ADDS R2, #1
+	ADDS R2, #1 @ increments R2 by 1
 	B main_loop
 
 delay_2:
 	SUBS R4, #1
 	BNE delay_2
 
-	ADDS R2, #2
+	ADDS R2, #2 @ increments R2 by 2
 	B main_loop
 
 fast_increment:
