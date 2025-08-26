@@ -36,23 +36,27 @@ ASM_Main:
 
 
 main_loop:
+
 	LDR R3, GPIOA_BASE
 	LDR R3, [R3, #0x10]
 
 	STR R2, [R1, #0x14] @ updates LEDs while no button is pressed
 
+	@ For when SW0 and SW1 are pressed togehter, this will cause fast +2
 	LDR R5, =3
 	MOV R7, R3
 	ANDS R7, R5 @
 	CMP R7, #0 @ compares R3 and 2 (switch 1), Z flag updated
 	BEQ fast_increment
 
+	@ For when SW0 is held, causing default time +2
 	LDR R5, =1
 	MOV R7, R3
 	ANDS R7, R5 @
 	CMP R7, #0 @ compares R3 and 2 (switch 1), Z flag updated
 	BEQ fast_delay_2
 
+	@ For when SW1 is held, causing fast +1
 	LDR R5, =2 @ loads the value of 1 into R5
 	MOV R7, R3
 	ANDS R7, R5 @
@@ -64,12 +68,14 @@ main_loop:
 	MOV R7, R3
 	ANDS R7, R5 @
 	CMP R7, #0 @ compares R3 and 4 (switch 2), Z flag updated
+	BEQ sw2_press
 
 
 	LDR R5, =8 @ SWITCH 3
 	MOV R7, R3
 	ANDS R7, R5 @
 	CMP R7, #0 @ compares R3 and 8 (switch 3), Z flag updated
+	BEQ sw3_press
 
 	LDR R4, LONG_DELAY_CNT
 	B delay_1
@@ -103,6 +109,17 @@ fast_increment:
 
 	ADDS R2, #2
 	B main_loop
+
+sw2_press:  @ This just forces the 0b101010 into R2, then once SW2 depressed continues counting as normal
+	LDR R2, = 0xAA
+	STR R2, [R1, #0x14]
+
+sw3_press:
+	STR R2, [R1, #0x14]
+	B main_loop
+
+LDR R4, LONG_DELAY_CNT
+B delay_1
 
 @ LITERALS; DO NOT EDIT
 	.align
