@@ -110,12 +110,15 @@ fast_increment:
 	ADDS R2, #2
 	B main_loop
 
-sw2_press:  @ This just forces the 0b101010 into R2, then once SW2 depressed continues counting as normal
+sw2_press:  @ This just forces the 0b101010 into R2, then once SW2 depressed continues counting as normal.
+			@ It works by just branching into this event and remaining there until the button is depressed,
+			@ and it also sets the LED register to be 0xAA, so it can continue counting from there
 	LDR R2, = 0xAA
 	STR R2, [R1, #0x14]
 
 sw3_press:
-	STR R2, [R1, #0x14]
+	@
+	STR R2, [R1, #0x14] @Stores the current LED pattern located at addy [R1+0x14] into the register R2
 	B main_loop
 
 LDR R4, LONG_DELAY_CNT
