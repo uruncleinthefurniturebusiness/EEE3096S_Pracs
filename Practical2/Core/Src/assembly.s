@@ -118,7 +118,7 @@ sw2_press:  @ This just forces the 0b101010 into R2, then once SW2 depressed con
 
 sw3_press:
 	@
-	STR R2, [R1, #0x14] @Stores the current LED pattern located at addy [R1+0x14] into the register R2
+	STR R2, [R1, #0x14] @Stores the current LED pattern located at address [R1+0x14] into the register R2
 	B main_loop
 
 LDR R4, LONG_DELAY_CNT
