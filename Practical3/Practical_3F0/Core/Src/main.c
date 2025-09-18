@@ -30,7 +30,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define MAX_ITER 400
+#define MAX_ITER 100
 #define SCALE 1000000
 
 /* USER CODE END PTD */
@@ -55,6 +55,10 @@ uint32_t  start_time=0, end_time=0, execution_time=0;
 uint64_t check_sum=0;
 uint64_t checksums[5];
 uint32_t exec_times[5];
+
+uint32_t cycle_counts[5];
+double time_secs[5];          // seconds for each image size
+double throughput_pxps[5];    // pixels per second for each image size
 
 /* USER CODE END PV */
 
@@ -105,6 +109,12 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
+  /* --- Enable TIM2 as free-running cycle counter --- */
+  __HAL_RCC_TIM2_CLK_ENABLE();
+  TIM2->PSC = 0;                  // Prescaler = 0  -> 48 MHz tick
+  TIM2->CNT = 0;                  // Clear counter
+  TIM2->CR1 |= TIM_CR1_CEN;       // Start timer
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -122,23 +132,28 @@ int main(void)
 
 	  	        // Arrays to hold results for viewing in debugger
 
-	  	        for (int i = 0; i < num_sizes; i++) {
+	  	  for (int i = 0; i < num_sizes; i++)
+	  	  {
+	  		  uint32_t start_cycles = TIM2->CNT;
+	  		  start_time = HAL_GetTick();
 
-	  	            start_time = HAL_GetTick();
+	  		  check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
 
-	  	            check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
+	  		  end_time = HAL_GetTick();
+	  		  execution_time = end_time - start_time;
 
+	  		  uint32_t stop_cycles = TIM2->CNT;
+	  		  uint32_t cycle_diff = stop_cycles - start_cycles;
 
-	  	            end_time = HAL_GetTick();
+	  		  double time_s = (double)cycle_diff / 48e6;
+	  		  double throughput = (double)(dim[i] * dim[i]) / time_s;
 
-	  	            execution_time = end_time - start_time;
-
-	  	            // Store results
-	  	            checksums[i] = check_sum;
-	  	            exec_times[i] = execution_time;
-
-
-	  	        }
+	  		  checksums[i]     = check_sum;
+	  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
+	  		  cycle_counts[i]  = cycle_diff;      // raw CPU cycles
+	  		  time_secs[i]     = time_s;          // seconds
+	  		  throughput_pxps[i] = throughput;    // pixels per second
+	  	  }
 
 	  	  //TODO: Keep the LEDs ON for 2s
 	  	  HAL_Delay(2000);
