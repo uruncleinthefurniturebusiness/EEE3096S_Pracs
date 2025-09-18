@@ -127,7 +127,7 @@ int main(void)
 
 	            start_time = HAL_GetTick();
 
-	            check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
+	            check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
 
 
 	            end_time = HAL_GetTick();

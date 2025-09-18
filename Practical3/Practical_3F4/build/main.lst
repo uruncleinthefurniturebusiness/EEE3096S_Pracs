@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
   29:Core/Src/main.c **** /* USER CODE END Includes */
   30:Core/Src/main.c **** 
   31:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 2
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 2
 
 
   32:Core/Src/main.c **** /* USER CODE BEGIN PTD */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
   86:Core/Src/main.c **** 
   87:Core/Src/main.c ****   /* USER CODE END 1 */
   88:Core/Src/main.c **** 
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 3
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 3
 
 
   89:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
@@ -162,7 +162,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  127:Core/Src/main.c **** 
  128:Core/Src/main.c **** 	            start_time = HAL_GetTick();
  129:Core/Src/main.c **** 
- 130:Core/Src/main.c **** 	            check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
+ 130:Core/Src/main.c **** 	            check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
  131:Core/Src/main.c **** 
  132:Core/Src/main.c **** 
  133:Core/Src/main.c **** 	            end_time = HAL_GetTick();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  143:Core/Src/main.c **** 
  144:Core/Src/main.c **** 	  //TODO: Keep the LEDs ON for 2s
  145:Core/Src/main.c **** 	  HAL_Delay(2000);
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 4
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 4
 
 
  146:Core/Src/main.c **** 	  //TODO: Turn OFF LEDs
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  200:Core/Src/main.c ****   * @param None
  201:Core/Src/main.c ****   * @retval None
  202:Core/Src/main.c ****   */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 5
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 5
 
 
  203:Core/Src/main.c **** static void MX_GPIO_Init(void)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
   72 002a 42F08002 		orr	r2, r2, #128
   73 002e 1A63     		str	r2, [r3, #48]
   74              		.loc 1 212 3 view .LVU12
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 6
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 6
 
 
   75 0030 1A6B     		ldr	r2, [r3, #48]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  116              		.loc 1 225 3 is_stmt 1 view .LVU28
  117              		.loc 1 225 25 is_stmt 0 view .LVU29
  118 0064 0694     		str	r4, [sp, #24]
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 7
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 7
 
 
  226:Core/Src/main.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  164              		.cfi_offset 11, -8
  165              		.cfi_offset 14, -4
  166 0004 8BB0     		sub	sp, sp, #44
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 8
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 8
 
 
  167              	.LCFI4:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  197 001e 69EB0209 		sbc	r9, r9, r2
  198              	.LVL6:
  260:Core/Src/main.c **** 			  yi = (2*xi*yi)/SCALE+y0;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 9
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 9
 
 
  199              		.loc 1 260 6 is_stmt 1 view .LVU43
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  247 0060 05EB4101 		add	r1, r5, r1, lsl #1
  248 0064 FFF7FEFF 		bl	__aeabi_ldivmod
  249              	.LVL14:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 10
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 10
 
 
  250 0068 8946     		mov	r9, r1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  294 00a6 43EBEB73 		adc	r3, r3, fp, asr #31
  295 00aa 0693     		str	r3, [sp, #24]
  296              	.LVL23:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 11
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 11
 
 
  297              		.loc 1 264 20 view .LVU71
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  340 00ec A301     		lsls	r3, r4, #6
  341 00ee 43EA9063 		orr	r3, r3, r0, lsr #26
  342 00f2 8201     		lsls	r2, r0, #6
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 12
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 12
 
 
  343 00f4 121A     		subs	r2, r2, r0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  386 0136 0135     		adds	r5, r5, #1
  387              	.LVL31:
  388              	.L6:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 13
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 13
 
 
  240:Core/Src/main.c **** 	  for (int x = 0; x < width; x++){
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  436              	calculate_mandelbrot_double:
  437              	.LVL33:
  438              	.LFB138:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 14
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 14
 
 
  272:Core/Src/main.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  282:Core/Src/main.c ****     		double x_0 = ((double)x/width)*3.5 - 2.5;
  283:Core/Src/main.c ****     		double y_0 = (double)y/height * 2.0 - 1.0;
  284:Core/Src/main.c **** 
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 15
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 15
 
 
  285:Core/Src/main.c ****     		double x_i = 0;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  517              		.loc 1 303 12 is_stmt 0 view .LVU116
  518 004c 5246     		mov	r2, r10
  519 004e 5B46     		mov	r3, fp
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 16
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 16
 
 
  520 0050 DDE90201 		ldrd	r0, [sp, #8]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  564 0082 0246     		mov	r2, r0
  565 0084 0B46     		mov	r3, r1
  566 0086 DDE90001 		ldrd	r0, [sp]
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 17
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 17
 
 
  567 008a FFF7FEFF 		bl	__aeabi_dadd
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  610 00b8 FFF7FEFF 		bl	__aeabi_i2d
  611              	.LVL60:
  612 00bc 0446     		mov	r4, r0
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 18
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 18
 
 
  613 00be 0D46     		mov	r5, r1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  659              	.LVL70:
  283:Core/Src/main.c **** 
  660              		.loc 1 283 14 view .LVU148
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 19
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 19
 
 
  661 010a 0022     		movs	r2, #0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  702 013e B6E7     		b	.L25
  703              	.L30:
  280:Core/Src/main.c ****     	{
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 20
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 20
 
 
  704              		.loc 1 280 15 view .LVU162
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  744              		@ frame_needed = 0, uses_anonymous_args = 0
  745              		@ link register save eliminated.
  325:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 21
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 21
 
 
  326:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
   49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
   51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 22
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 22
 
 
   52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 23
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 23
 
 
  109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
  164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  165:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 24
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 24
 
 
  166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  220:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+r" (r)
  221:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
  222:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 25
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 25
 
 
  223:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  277:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Ensures the apparent order of the explicit memory operations before
  278:Drivers/CMSIS/Include/cmsis_gcc.h ****            and after the instruction, without ensuring their completion.
  279:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 26
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 26
 
 
  280:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DMB(void)
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  334:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  335:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  336:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 27
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 27
 
 
  337:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  391:Drivers/CMSIS/Include/cmsis_gcc.h ****   result <<= s;                        /* shift when v's highest bits are zero */
  392:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  393:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 28
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 28
 
 
  394:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  448:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  449:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (16 bit)
  450:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 16 bit values.
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 29
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 29
 
 
  451:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  505:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
  506:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  507:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 30
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 30
 
 
  508:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  562:Drivers/CMSIS/Include/cmsis_gcc.h **** __extension__ \
  563:Drivers/CMSIS/Include/cmsis_gcc.h **** ({                          \
  564:Drivers/CMSIS/Include/cmsis_gcc.h ****   int32_t __RES, __ARG1 = (ARG1); \
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 31
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 31
 
 
  565:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  619:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  620:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);    /* Add explicit type cast here */
  621:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 32
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 32
 
 
  622:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  676:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
  677:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  678:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 33
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 33
 
 
  679:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  733:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  734:Drivers/CMSIS/Include/cmsis_gcc.h ****   if (sat <= 31U)
  735:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 34
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 34
 
 
  736:Drivers/CMSIS/Include/cmsis_gcc.h ****     const uint32_t max = ((1U << sat) - 1U);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  790:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
  791:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  792:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDA(volatile uint32_t *ptr)
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 35
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 35
 
 
  793:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  847:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldaexb %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  848:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);
  849:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 36
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 36
 
 
  850:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  904:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
  905:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
  906:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 37
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 37
 
 
  907:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  750              		.loc 2 960 27 view .LVU169
  751              	.LBB24:
  961:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 38
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 38
 
 
  962:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  798 000e 0023     		movs	r3, #0
  799 0010 0293     		str	r3, [sp, #8]
  800 0012 0393     		str	r3, [sp, #12]
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 39
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 39
 
 
  801 0014 0493     		str	r3, [sp, #16]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  841 004a 0123     		movs	r3, #1
  842 004c 0793     		str	r3, [sp, #28]
  170:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 40
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 40
 
 
  843              		.loc 1 170 3 is_stmt 1 view .LVU193
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  185:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
  879              		.loc 1 185 3 is_stmt 1 view .LVU212
  185:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 41
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 41
 
 
  880              		.loc 1 185 31 is_stmt 0 view .LVU213
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  194:Core/Src/main.c ****   }
  921              		.loc 1 194 5 view .LVU227
  922 00a0 FFF7FEFF 		bl	Error_Handler
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 42
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 42
 
 
  923              	.LVL81:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  972 0016 3060     		str	r0, [r6]
  130:Core/Src/main.c **** 
  973              		.loc 1 130 14 is_stmt 1 view .LVU235
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 43
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 43
 
 
  130:Core/Src/main.c **** 
@@ -2527,7 +2527,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  976 001a 53F82400 		ldr	r0, [r3, r4, lsl #2]
  977 001e 6422     		movs	r2, #100
  978 0020 0146     		mov	r1, r0
- 979 0022 FFF7FEFF 		bl	calculate_mandelbrot_double
+ 979 0022 FFF7FEFF 		bl	calculate_mandelbrot_fixed_point_arithmetic
  980              	.LVL87:
  130:Core/Src/main.c **** 
  981              		.loc 1 130 24 discriminator 1 view .LVU237
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  1014 0054 DCDD     		ble	.L45
  1015              	.LBE28:
  145:Core/Src/main.c **** 	  //TODO: Turn OFF LEDs
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 44
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 44
 
 
  1016              		.loc 1 145 4 view .LVU250
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  1062              		.section	.bss.exec_times,"aw",%nobits
  1063              		.align	2
  1066              	exec_times:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 45
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 45
 
 
  1067 0000 00000000 		.space	20
@@ -2696,42 +2696,42 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 1
  1122              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  1123              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  1124              		.file 11 "<built-in>"
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s 			page 46
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:21     .text.MX_GPIO_Init:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:133    .text.MX_GPIO_Init:00000074 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:140    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:146    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:414    .text.calculate_mandelbrot_fixed_point_arithmetic:00000150 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:430    .text.calculate_mandelbrot_double:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:436    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:724    .text.calculate_mandelbrot_double:00000150 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:732    .text.Error_Handler:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:738    .text.Error_Handler:00000000 Error_Handler
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:770    .text.SystemClock_Config:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:776    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:927    .text.SystemClock_Config:000000a4 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:933    .text.main:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:939    .text.main:00000000 main
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1048   .text.main:00000078 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1101   .bss.start_time:00000000 start_time
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1108   .data.dim:00000000 dim
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1080   .bss.check_sum:00000000 check_sum
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1094   .bss.end_time:00000000 end_time
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1087   .bss.execution_time:00000000 execution_time
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1073   .bss.checksums:00000000 checksums
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1066   .bss.exec_times:00000000 exec_times
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1063   .bss.exec_times:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1070   .bss.checksums:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1077   .bss.check_sum:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1084   .bss.execution_time:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1091   .bss.end_time:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1098   .bss.start_time:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\ccAVqcX2.s:1105   .data.dim:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:21     .text.MX_GPIO_Init:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:133    .text.MX_GPIO_Init:00000074 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:140    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:146    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:414    .text.calculate_mandelbrot_fixed_point_arithmetic:00000150 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:430    .text.calculate_mandelbrot_double:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:436    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:724    .text.calculate_mandelbrot_double:00000150 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:732    .text.Error_Handler:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:738    .text.Error_Handler:00000000 Error_Handler
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:770    .text.SystemClock_Config:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:776    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:927    .text.SystemClock_Config:000000a4 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:933    .text.main:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:939    .text.main:00000000 main
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1048   .text.main:00000078 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1101   .bss.start_time:00000000 start_time
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1108   .data.dim:00000000 dim
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1080   .bss.check_sum:00000000 check_sum
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1094   .bss.end_time:00000000 end_time
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1087   .bss.execution_time:00000000 execution_time
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1073   .bss.checksums:00000000 checksums
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1066   .bss.exec_times:00000000 exec_times
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1063   .bss.exec_times:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1070   .bss.checksums:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1077   .bss.check_sum:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1084   .bss.execution_time:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1091   .bss.end_time:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1098   .bss.start_time:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccnfAZYc.s:1105   .data.dim:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
