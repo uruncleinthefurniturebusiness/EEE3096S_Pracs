@@ -30,8 +30,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define MAX_ITER 500
-#define SCALE 1000000
+#define MAX_ITER 100
+#define SCALE 100
 
 
 /* USER CODE END PTD */
@@ -127,7 +127,7 @@ int main(void)
 
 	            start_time = HAL_GetTick();
 
-	            check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
+	            check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
 
 
 	            end_time = HAL_GetTick();
