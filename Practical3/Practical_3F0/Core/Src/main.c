@@ -31,7 +31,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 #define MAX_ITER 100
-#define SCALE 1000000
+#define SCALE 100
 
 /* USER CODE END PTD */
 
@@ -51,6 +51,8 @@
 //TODO: Define variables you think you might need
 // - Performance timing variables (e.g execution time, throughput, pixels per second, clock cycles)
 int dim[] = {128, 160, 192, 224, 256};
+int width[] = {426, 640, 854, 1280, 1920};
+int height[] = {240, 360, 480, 720, 1080};
 uint32_t  start_time=0, end_time=0, execution_time=0;
 uint64_t check_sum=0;
 uint64_t checksums[5];
@@ -137,7 +139,7 @@ int main(void)
 	  		  uint32_t start_cycles = TIM2->CNT;
 	  		  start_time = HAL_GetTick();
 
-	  		  check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
+	  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
 
 	  		  end_time = HAL_GetTick();
 	  		  execution_time = end_time - start_time;
