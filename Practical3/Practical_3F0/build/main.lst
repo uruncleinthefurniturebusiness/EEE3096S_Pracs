@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
   31:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   32:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   33:Core/Src/main.c **** #define MAX_ITER 100
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 2
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 2
 
 
   34:Core/Src/main.c **** #define SCALE 100
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
   88:Core/Src/main.c **** {
   89:Core/Src/main.c **** 
   90:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 3
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 3
 
 
   91:Core/Src/main.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  145:Core/Src/main.c **** 	  		  execution_time = end_time - start_time;
  146:Core/Src/main.c **** 
  147:Core/Src/main.c **** 	  		  uint32_t stop_cycles = TIM2->CNT;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 4
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 4
 
 
  148:Core/Src/main.c **** 	  		  uint32_t cycle_diff = stop_cycles - start_cycles;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  202:Core/Src/main.c ****     Error_Handler();
  203:Core/Src/main.c ****   }
  204:Core/Src/main.c **** }
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 5
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 5
 
 
  205:Core/Src/main.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
   64              	.LBB5:
   65              		.loc 1 220 3 view .LVU10
   66              		.loc 1 220 3 view .LVU11
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 6
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 6
 
 
   67 0022 5A69     		ldr	r2, [r3, #20]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  110 0056 FE3B     		subs	r3, r3, #254
  111 0058 0493     		str	r3, [sp, #16]
  232:Core/Src/main.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 7
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 7
 
 
  112              		.loc 1 232 3 is_stmt 1 view .LVU26
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  156              		.cfi_offset 4, -20
  157              		.cfi_offset 5, -16
  158              		.cfi_offset 6, -12
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 8
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 8
 
 
  159              		.cfi_offset 7, -8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  257:Core/Src/main.c **** 
  258:Core/Src/main.c **** 		  while (iter< max_iterations){
  259:Core/Src/main.c **** 			  int64_t xi2 = (xi*xi)/SCALE;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 9
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 9
 
 
  260:Core/Src/main.c **** 			  int64_t yi2 = (yi*yi)/SCALE;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  243              	.L6:
  244              		.loc 1 270 10 view .LVU51
  245              	.LBE10:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 10
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 10
 
 
  258:Core/Src/main.c **** 			  int64_t xi2 = (xi*xi)/SCALE;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  290              		.loc 1 262 9 view .LVU61
  291 0098 0029     		cmp	r1, #0
  292 009a 05DC     		bgt	.L7
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 11
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 11
 
 
  293 009c C1D1     		bne	.L13
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  339 00d2 FFF7FEFF 		bl	__aeabi_lmul
  340              	.LVL22:
  252:Core/Src/main.c **** 		  // y0 = (y/height) * 2.0 - 1.0
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 12
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 12
 
 
  341              		.loc 1 252 40 view .LVU73
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  384              		.loc 1 256 9 is_stmt 0 view .LVU84
  385 0110 0023     		movs	r3, #0
  386 0112 9846     		mov	r8, r3
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 13
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 13
 
 
  255:Core/Src/main.c **** 		  int iter = 0;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  273:Core/Src/main.c **** 
  274:Core/Src/main.c **** 	  }
  275:Core/Src/main.c ****   }
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 14
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 14
 
 
  276:Core/Src/main.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  481              		.cfi_offset 4, -20
  482              		.cfi_offset 5, -16
  483              		.cfi_offset 6, -12
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 15
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 15
 
 
  484              		.cfi_offset 7, -8
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  295:Core/Src/main.c ****     		int iteration = 0;
  296:Core/Src/main.c **** 
  297:Core/Src/main.c **** 
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 16
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 16
 
 
  298:Core/Src/main.c ****     		while (iteration < max_iterations)
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  565 0056 0698     		ldr	r0, [sp, #24]
  566 0058 0799     		ldr	r1, [sp, #28]
  567 005a FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 17
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 17
 
 
  568              	.LVL45:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  304:Core/Src/main.c ****     			{
  613              		.loc 1 304 18 is_stmt 0 view .LVU126
  614 008e 0292     		str	r2, [sp, #8]
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 18
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 18
 
 
  615 0090 0393     		str	r3, [sp, #12]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  660 00c6 36DA     		bge	.L27
  661              	.LBB20:
  290:Core/Src/main.c ****     		double y_0 = (double)y/height * 2.0 - 1.0;
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 19
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 19
 
 
  662              		.loc 1 290 7 view .LVU137
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  708 010e 2900     		movs	r1, r5
  709 0110 FFF7FEFF 		bl	__aeabi_ddiv
  710              	.LVL69:
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 20
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 20
 
 
  291:Core/Src/main.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  752              	.L19:
  286:Core/Src/main.c ****     {
  753              		.loc 1 286 23 discriminator 1 view .LVU159
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 21
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 21
 
 
  754 013e 0E9B     		ldr	r3, [sp, #56]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  800              		.syntax unified
  801              		.code	16
  802              		.thumb_func
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 22
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 22
 
 
  804              	Error_Handler:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
   31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
   32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
   33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 23
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 23
 
 
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
   88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 24
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 24
 
 
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  818              		.loc 2 142 3 view .LVU169
  819              		.syntax divided
  820              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 25
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 25
 
 
  821 0000 72B6     		cpsid i
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  868              	.LVL80:
  180:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
  869              		.loc 1 180 3 is_stmt 1 view .LVU178
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 26
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 26
 
 
  180:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  906 003c 0193     		str	r3, [sp, #4]
  197:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
  907              		.loc 1 197 3 is_stmt 1 view .LVU197
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 27
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 27
 
 
  197:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  954              		.cfi_def_cfa_offset 20
  955              		.cfi_offset 4, -20
  956              		.cfi_offset 5, -16
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 28
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 28
 
 
  957              		.cfi_offset 6, -12
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  116:Core/Src/main.c ****   TIM2->CNT = 0;                  // Clear counter
  1001              		.loc 1 116 13 is_stmt 0 view .LVU218
  1002 002c 8023     		movs	r3, #128
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 29
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 29
 
 
  1003 002e DB05     		lsls	r3, r3, #23
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  142:Core/Src/main.c **** 
  1045              		.loc 1 142 18 discriminator 1 view .LVU231
  1046 005e 2D4B     		ldr	r3, .L42+12
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 30
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 30
 
 
  1047 0060 9946     		mov	r9, r3
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  1087              	.LVL97:
  1088 0090 0400     		movs	r4, r0
  1089 0092 0D00     		movs	r5, r1
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 31
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 31
 
 
  1090              	.LVL98:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  156:Core/Src/main.c **** 	  		  throughput_pxps[i] = throughput;    // pixels per second
  1132              		.loc 1 156 25 is_stmt 0 view .LVU258
  1133 00cc 184B     		ldr	r3, .L42+40
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 32
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 32
 
 
  1134 00ce 6344     		add	r3, r3, ip
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  1177              		.loc 1 137 7 view .LVU269
  1178              	.LBB29:
  137:Core/Src/main.c **** 	  	  {
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 33
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 33
 
 
  1179              		.loc 1 137 12 view .LVU270
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  1226              		.global	exec_times
  1227              		.section	.bss.exec_times,"aw",%nobits
  1228              		.align	2
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 34
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 34
 
 
  1231              	exec_times:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  1290              		.global	dim
  1291              		.section	.data.dim,"aw"
  1292              		.align	2
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 35
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 35
 
 
  1295              	dim:
@@ -2057,51 +2057,51 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 1
  1308              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
  1309              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
  1310              		.file 10 "<built-in>"
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 36
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:131    .text.MX_GPIO_Init:0000006c $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:139    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:145    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:450    .text.calculate_mandelbrot_fixed_point_arithmetic:00000158 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:464    .text.calculate_mandelbrot_double:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:470    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:790    .text.calculate_mandelbrot_double:00000164 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:798    .text.Error_Handler:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:804    .text.Error_Handler:00000000 Error_Handler
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:836    .text.SystemClock_Config:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:842    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:940    .text.main:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:946    .text.main:00000000 main
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1187   .text.main:00000108 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1266   .bss.start_time:00000000 start_time
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1295   .data.dim:00000000 dim
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1245   .bss.check_sum:00000000 check_sum
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1259   .bss.end_time:00000000 end_time
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1252   .bss.execution_time:00000000 execution_time
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1238   .bss.checksums:00000000 checksums
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1231   .bss.exec_times:00000000 exec_times
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1224   .bss.cycle_counts:00000000 cycle_counts
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1217   .bss.time_secs:00000000 time_secs
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1210   .bss.throughput_pxps:00000000 throughput_pxps
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1207   .bss.throughput_pxps:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1214   .bss.time_secs:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1221   .bss.cycle_counts:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1228   .bss.exec_times:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1235   .bss.checksums:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1242   .bss.check_sum:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1249   .bss.execution_time:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1256   .bss.end_time:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1263   .bss.start_time:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1273   .data.height:00000000 height
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1270   .data.height:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1284   .data.width:00000000 width
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1281   .data.width:00000000 $d
-C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s:1292   .data.dim:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:131    .text.MX_GPIO_Init:0000006c $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:139    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:145    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:450    .text.calculate_mandelbrot_fixed_point_arithmetic:00000158 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:464    .text.calculate_mandelbrot_double:00000000 $t
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:470    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:790    .text.calculate_mandelbrot_double:00000164 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:798    .text.Error_Handler:00000000 $t
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:804    .text.Error_Handler:00000000 Error_Handler
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:836    .text.SystemClock_Config:00000000 $t
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:842    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:940    .text.main:00000000 $t
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:946    .text.main:00000000 main
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1187   .text.main:00000108 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1266   .bss.start_time:00000000 start_time
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1295   .data.dim:00000000 dim
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1245   .bss.check_sum:00000000 check_sum
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1259   .bss.end_time:00000000 end_time
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1252   .bss.execution_time:00000000 execution_time
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1238   .bss.checksums:00000000 checksums
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1231   .bss.exec_times:00000000 exec_times
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1224   .bss.cycle_counts:00000000 cycle_counts
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1217   .bss.time_secs:00000000 time_secs
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1210   .bss.throughput_pxps:00000000 throughput_pxps
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1207   .bss.throughput_pxps:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1214   .bss.time_secs:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1221   .bss.cycle_counts:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1228   .bss.exec_times:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1235   .bss.checksums:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1242   .bss.check_sum:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1249   .bss.execution_time:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1256   .bss.end_time:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1263   .bss.start_time:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1273   .data.height:00000000 height
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1270   .data.height:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1284   .data.width:00000000 width
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1281   .data.width:00000000 $d
+C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s:1292   .data.dim:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -2117,7 +2117,7 @@ __aeabi_dadd
 __aeabi_dcmpgt
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\cc0AnGug.s 			page 37
+ARM GAS  C:\Users\Ebrahim\AppData\Local\Temp\cctA21Jv.s 			page 37
 
 
 __aeabi_ui2d

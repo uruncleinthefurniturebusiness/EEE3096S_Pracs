@@ -1528,17 +1528,17 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00002ba1      0x330 build/system_stm32f0xx.o
  .debug_line    0x00002ed1       0x74 build/startup_stm32f051x8.o
 
-.debug_str      0x00000000     0x11bf
- .debug_str     0x00000000     0x11bf build/main.o
-                                0x6fa (size before relaxing)
- .debug_str     0x000011bf      0x200 build/stm32f0xx_it.o
- .debug_str     0x000011bf      0x22a build/stm32f0xx_hal_msp.o
- .debug_str     0x000011bf      0x686 build/stm32f0xx_hal_rcc.o
- .debug_str     0x000011bf      0x70a build/stm32f0xx_hal.o
- .debug_str     0x000011bf      0x425 build/stm32f0xx_hal_gpio.o
- .debug_str     0x000011bf      0x64b build/stm32f0xx_hal_cortex.o
- .debug_str     0x000011bf      0x2a2 build/system_stm32f0xx.o
- .debug_str     0x000011bf       0xaf build/startup_stm32f051x8.o
+.debug_str      0x00000000     0x124d
+ .debug_str     0x00000000     0x124d build/main.o
+                                0x70b (size before relaxing)
+ .debug_str     0x0000124d      0x200 build/stm32f0xx_it.o
+ .debug_str     0x0000124d      0x22a build/stm32f0xx_hal_msp.o
+ .debug_str     0x0000124d      0x686 build/stm32f0xx_hal_rcc.o
+ .debug_str     0x0000124d      0x70a build/stm32f0xx_hal.o
+ .debug_str     0x0000124d      0x425 build/stm32f0xx_hal_gpio.o
+ .debug_str     0x0000124d      0x64b build/stm32f0xx_hal_cortex.o
+ .debug_str     0x0000124d      0x2a2 build/system_stm32f0xx.o
+ .debug_str     0x0000124d       0xaf build/startup_stm32f051x8.o
 
 .debug_frame    0x00000000      0x824
  .debug_frame   0x00000000       0xd8 build/main.o
