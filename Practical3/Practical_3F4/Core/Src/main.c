@@ -59,8 +59,7 @@ uint32_t exec_times[5];
 
 uint32_t cycle_counts[5];
 double time_secs[5];          // seconds for each image size
-double throughput_pxps[5];    // pixels per second for each image size
-
+double throughput_pxps[5];  // pixels per second for each image size
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,6 +69,11 @@ static void MX_GPIO_Init(void);
 //TODO: Define any function prototypes you might need such as the calculate Mandelbrot function among others
 uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations);
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
+uint64_t calculate_mandelbrot_float(int width, int height, int max_iterations);
+
+static void DWT_Init(void);
+static void DWT_Reset(void);
+static uint32_t DWT_GetCycles(void);
 
 
 /* USER CODE END PFP */
@@ -96,7 +100,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  DWT_Init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -108,6 +112,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  SCB->CPACR |= (0xF << 20);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -129,18 +134,19 @@ int main(void)
 
 	  for (int i = 0; i < num_sizes; i++)
 	  	  	  {
-	  	  		  uint32_t start_cycles = TIM2->CNT;
+	  	  		DWT_Reset();
+	  	  		  uint32_t start_cycles = DWT_GetCycles();
+
 	  	  		  start_time = HAL_GetTick();
-
-	  	  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
-
+	  	  		  check_sum = calculate_mandelbrot_float(dim[i], dim[i], MAX_ITER);
 	  	  		  end_time = HAL_GetTick();
 	  	  		  execution_time = end_time - start_time;
 
-	  	  		  uint32_t stop_cycles = TIM2->CNT;
+	  	  		  uint32_t stop_cycles = DWT_GetCycles();
 	  	  		  uint32_t cycle_diff = stop_cycles - start_cycles;
 
-	  	  		  double time_s = (double)cycle_diff / 48e6;
+
+	  	  		  double time_s = (double)cycle_diff / 120e6;
 	  	  		  double throughput = (double)(dim[i] * dim[i]) / time_s;
 
 	  	  		  checksums[i]     = check_sum;
@@ -149,6 +155,7 @@ int main(void)
 	  	  		  time_secs[i]     = time_s;          // seconds
 	  	  		  throughput_pxps[i] = throughput;    // pixels per second
 	  	  	  }
+
 	  //TODO: Keep the LEDs ON for 2s
 	  HAL_Delay(2000);
 	  //TODO: Turn OFF LEDs
@@ -278,6 +285,41 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
 
 }
 
+uint64_t calculate_mandelbrot_float(int width, int height, int max_iterations){
+  uint64_t mandelbrot_sum = 0;
+    //TODO: Complete the function implementation
+
+  for (int y = 0; y < height; y++){
+	  for (int x = 0; x < width; x++){
+		  // Convert to fixed-point coordinates
+		  // x0 = (x/width) * 3.5 - 2.5
+		  float x0 = ((float)x / width) * 3.5f - 2.5f;
+		  float y0 = ((float)y / height) * 2.0f - 1.0f;
+		  float xi = 0.0f, yi = 0.0f;
+		  int iter = 0;
+
+		  while (iter< max_iterations){
+			  float xi2 = (xi*xi);
+			  float yi2 = (yi*yi);
+
+			  if (xi2 + yi2 > 4.0f) {
+                  break;
+              }
+
+			  float temp = xi2 - yi2;
+			  yi = 2.0f * xi * yi + y0;
+			  xi = temp + x0;
+			  iter++;
+		  }
+		  mandelbrot_sum = mandelbrot_sum + iter;
+
+	  }
+  }
+
+    return mandelbrot_sum;
+
+}
+
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
 {
     uint64_t mandelbrot_sum = 0;
@@ -320,6 +362,24 @@ uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
     }
     //checksum = mandelbrot_sum;
     return mandelbrot_sum;
+}
+
+static void DWT_Init(void)
+{
+
+    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CYCCNT = 0;
+    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+}
+
+static uint32_t DWT_GetCycles(void)
+{
+    return DWT->CYCCNT;
+}
+
+static void DWT_Reset(void)
+{
+    DWT->CYCCNT = 0;
 }
 
 /* USER CODE END 4 */
