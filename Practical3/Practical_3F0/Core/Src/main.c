@@ -75,6 +75,15 @@ static void MX_GPIO_Init(void);
 uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations);
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
 
+void Task1(void);
+void Task2(void);
+void Task3(void);
+void Task4(void);
+void Task5(void);
+void Task6(void);
+void Task7(void);
+void Task8(void);
+
 
 /* USER CODE END PFP */
 
@@ -160,8 +169,8 @@ int main(void)
 	  		  }
 
 
-	  		  double time_s = (double)cycle_diff / 48e6;
-	  		  double throughput = (double)(width[i] * height[i]) / time_s;
+	  		  //double time_s = (double)cycle_diff / 48e6;
+	  		  //double throughput = (double)(width[i] * height[i]) / time_s;
 
 	  		  checksums[i]     = check_sum;
 	  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
@@ -292,6 +301,8 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
 }
 
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
+
+
 {
     uint64_t mandelbrot_sum = 0;
     //TODO: Complete the function implementation
@@ -334,6 +345,283 @@ uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
 
     return mandelbrot_sum;
 }
+
+//Task 1 for F4 only
+
+void Task2(void){
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+		  	  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+
+
+		  	  for (int i = 0; i < num_sizes; i++)
+		  	  {
+		  		  uint32_t start_cycles = TIM2->CNT;
+		  		  start_time = HAL_GetTick();
+
+		  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], MAX_ITER);
+
+		  		  end_time = HAL_GetTick();
+		  		  execution_time = end_time - start_time;
+
+		  		  uint32_t stop_cycles = TIM2->CNT;
+
+		  		  uint32_t cycle_diff = 0;
+
+		  		  if (stop_cycles < start_cycles) {
+		  		      // Handle timer overflow
+		  		      cycle_diff = (0xFFFFFFFF - start_cycles) + stop_cycles + 1;
+		  		  } else {
+		  		    // Normal case
+		  		      cycle_diff = stop_cycles - start_cycles;
+		  		  }
+
+
+		  		  //double time_s = (double)cycle_diff / 48e6;
+		  		  //double throughput = (double)(width[i] * height[i]) / time_s;
+
+		  		  checksums[i]     = check_sum;
+		  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
+		  		  //cycle_counts[i]  = cycle_diff;      // raw CPU cycles
+		  		  //time_secs[i]     = time_s;          // seconds
+		  		  //throughput_pxps[i] = throughput;    // pixels per second
+		  	  }
+
+
+		  	  HAL_Delay(2000);
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+}
+
+void Task3(void){
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+		  	  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+
+
+		  	  for (int i = 0; i < num_sizes; i++)
+		  	  {
+		  		  uint32_t start_cycles = TIM2->CNT;
+		  		  start_time = HAL_GetTick();
+
+		  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], MAX_ITER);
+
+		  		  end_time = HAL_GetTick();
+		  		  execution_time = end_time - start_time;
+
+		  		  uint32_t stop_cycles = TIM2->CNT;
+
+		  		  uint32_t cycle_diff = 0;
+
+		  		  if (stop_cycles < start_cycles) {
+		  		      // Handle timer overflow
+		  		      cycle_diff = (0xFFFFFFFF - start_cycles) + stop_cycles + 1;
+		  		  } else {
+		  		    // Normal case
+		  		      cycle_diff = stop_cycles - start_cycles;
+		  		  }
+
+
+		  		  //double time_s = (double)cycle_diff / 48e6;
+		  		  //double throughput = (double)(width[i] * height[i]) / time_s;
+
+		  		  checksums[i]     = check_sum;
+		  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
+		  		  //cycle_counts[i]  = cycle_diff;      // raw CPU cycles
+		  		  //time_secs[i]     = time_s;          // seconds
+		  		  //throughput_pxps[i] = throughput;    // pixels per second
+		  	  }
+
+
+		  	  HAL_Delay(2000);
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+}
+
+void Task4(void){
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+	  check_sum = 0;
+
+	  for (int i = 0; i < 5; i++)
+	  {
+		  start_time = HAL_GetTick();
+
+		  if (width[i]*height[i] * sizeof(uint32_t) <= MEMORY_LIMIT){
+			  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], 100);
+		  }
+		  else{
+			  int split = height[i] /2;
+
+			  check_sum += calculate_mandelbrot_fixed_point_arithmetic(width[i], split, 100);
+
+			  check_sum += calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i] - split, 100);
+
+		  }
+		  end_time = HAL_GetTick();
+		  execution_time = end_time - start_time;
+
+		  checksums[i]   = check_sum;
+		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+
+	  }
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+}
+
+void Task5(void){
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+		  	  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+
+
+		  	  for (int i = 0; i < num_sizes; i++)
+		  	  {
+		  		  uint32_t start_cycles = TIM2->CNT;
+		  		  start_time = HAL_GetTick();
+
+		  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], MAX_ITER);
+
+		  		  end_time = HAL_GetTick();
+		  		  execution_time = end_time - start_time;
+
+		  		  uint32_t stop_cycles = TIM2->CNT;
+
+		  		  uint32_t cycle_diff = 0;
+
+		  		  if (stop_cycles < start_cycles) {
+		  		      // Handle timer overflow
+		  		      cycle_diff = (0xFFFFFFFF - start_cycles) + stop_cycles + 1;
+		  		  } else {
+		  		    // Normal case
+		  		      cycle_diff = stop_cycles - start_cycles;
+		  		  }
+
+
+		  		  //double time_s = (double)cycle_diff / 48e6;
+		  		  //double throughput = (double)(width[i] * height[i]) / time_s;
+
+		  		  checksums[i]     = check_sum;
+		  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
+		  		  //cycle_counts[i]  = cycle_diff;      // raw CPU cycles
+		  		  //time_secs[i]     = time_s;          // seconds
+		  		  //throughput_pxps[i] = throughput;    // pixels per second
+		  	  }
+
+
+		  	  HAL_Delay(2000);
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+}
+
+void Task6(void){
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+		  	  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+
+
+		  	  for (int i = 0; i < num_sizes; i++)
+		  	  {
+		  		  uint32_t start_cycles = TIM2->CNT;
+		  		  start_time = HAL_GetTick();
+
+		  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], MAX_ITER);
+
+		  		  end_time = HAL_GetTick();
+		  		  execution_time = end_time - start_time;
+
+		  		  uint32_t stop_cycles = TIM2->CNT;
+
+		  		  uint32_t cycle_diff = 0;
+
+		  		  if (stop_cycles < start_cycles) {
+		  		      // Handle timer overflow
+		  		      cycle_diff = (0xFFFFFFFF - start_cycles) + stop_cycles + 1;
+		  		  } else {
+		  		    // Normal case
+		  		      cycle_diff = stop_cycles - start_cycles;
+		  		  }
+
+
+		  		  //double time_s = (double)cycle_diff / 48e6;
+		  		  //double throughput = (double)(width[i] * height[i]) / time_s;
+
+		  		  checksums[i]     = check_sum;
+		  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
+		  		  //cycle_counts[i]  = cycle_diff;      // raw CPU cycles
+		  		  //time_secs[i]     = time_s;          // seconds
+		  		  //throughput_pxps[i] = throughput;    // pixels per second
+		  	  }
+
+
+		  	  HAL_Delay(2000);
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+}
+
+void Task7(void){
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+		  	  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+
+
+		  	  for (int i = 0; i < num_sizes; i++)
+		  	  {
+		  		  uint32_t start_cycles = TIM2->CNT;
+		  		  start_time = HAL_GetTick();
+
+		  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], MAX_ITER);
+
+		  		  end_time = HAL_GetTick();
+		  		  execution_time = end_time - start_time;
+
+		  		  uint32_t stop_cycles = TIM2->CNT;
+
+		  		  uint32_t cycle_diff = 0;
+
+		  		  if (stop_cycles < start_cycles) {
+		  		      // Handle timer overflow
+		  		      cycle_diff = (0xFFFFFFFF - start_cycles) + stop_cycles + 1;
+		  		  } else {
+		  		    // Normal case
+		  		      cycle_diff = stop_cycles - start_cycles;
+		  		  }
+
+
+		  		  //double time_s = (double)cycle_diff / 48e6;
+		  		  //double throughput = (double)(width[i] * height[i]) / time_s;
+
+		  		  checksums[i]     = check_sum;
+		  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
+		  		  //cycle_counts[i]  = cycle_diff;      // raw CPU cycles
+		  		  //time_secs[i]     = time_s;          // seconds
+		  		  //throughput_pxps[i] = throughput;    // pixels per second
+		  	  }
+
+
+		  	  HAL_Delay(2000);
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+}
+
 
 /* USER CODE END 4 */
 

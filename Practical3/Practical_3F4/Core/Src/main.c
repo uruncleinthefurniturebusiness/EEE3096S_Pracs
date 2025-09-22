@@ -34,9 +34,6 @@
 #define MAX_ITER 100
 #define SCALE 1000000
 
-
-
-
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -79,6 +76,14 @@ static void MX_GPIO_Init(void);
 //TODO: Define any function prototypes you might need such as the calculate Mandelbrot function among others
 uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations);
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
+
+void Task2(void);
+void Task3(void);
+void Task4(void);
+void Task5(void);
+void Task6(void);
+void Task7(void);
+void Task8(void);
 
 
 /* USER CODE END PFP */
@@ -133,50 +138,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  //TODO: Visual indicator: Turn on LED0 to signal processing start
-	  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
 	  //TODO: Benchmark and Profile Performance
-	  //const int num_sizes = sizeof(dim) / sizeof(dim[0]);
 
-	        // Arrays to hold results for viewing in debugger
-
-	      for (int i = 0; i < 5; i++) {
-
-	    	  uint32_t t0 = HAL_GetTick();
-	    	  check_sum = calculate_mandelbrot_double(width[i], height[i], MAX_ITER);
-	    	  uint32_t elapsed_ms = HAL_GetTick() - t0;
-
-	    	  time_secs[i] = elapsed_ms / 1000.0;     // seconds
-	    	  checksums[i]  = check_sum;
-
-
-	    	  //uint64_t start = DWT->CYCCNT;
-	    	  //uint32_t t0 = HAL_GetTick();
-	    	  //check_sum = calculate_mandelbrot_double(width[i], height[i], MAX_ITER);
-	    	  //uint64_t end = DWT->CYCCNT;
-	    	  //uint32_t elapsed_ms = HAL_GetTick() - t0;
-
-	    	  //if (end < start) { end += 0x100000000ULL; } // adjust if wrapped
-	    	  //uint64_t cycles = end - start;
-	    	  //double time_s = (double)cycles / HAL_RCC_GetHCLKFreq();
-
-	          //uint32_t core_clk = HAL_RCC_GetHCLKFreq();
-	          //double time_s = (double)cycles / core_clk;
-
-	          //checksums[i] = check_sum;
-	          //cycle_counts[i]  = cycles;
-	          //throughput_pxps[i] = (double)(dim[i] * dim[i]) / (time_s);
-	          //time_secs[i] = time_s;
-
-	          //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-
-	      }
-
-
-	  //TODO: Keep the LEDs ON for 2s
-	  //HAL_Delay(2000);
-	  //TODO: Turn OFF LEDs
-	  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
   }
   /* USER CODE END 3 */
 }
@@ -303,6 +267,7 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
 }
 
 uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
+
 {
     uint64_t mandelbrot_sum = 0;
     //TODO: Complete the function implementation
@@ -345,6 +310,183 @@ uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
     //checksum = mandelbrot_sum;
     return mandelbrot_sum;
 }
+
+
+void Task1(void){
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+		  	  for (int i = 0; i < 5; i++)
+		  	  {
+		  		  start_time = HAL_GetTick();
+
+		  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], 100);
+
+		  		  end_time = HAL_GetTick();
+		  		  execution_time = end_time - start_time;
+
+		  		  uint32_t cycle_diff = 0;
+
+		  		  checksums[i]   = check_sum;
+		  		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+
+		  	  }
+
+		  	  HAL_Delay(2000);
+
+		  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+}
+
+void Task2(void){
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+	  for (int i = 0; i < 5; i++)
+	  {
+		  start_time = HAL_GetTick();
+
+		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
+
+		  end_time = HAL_GetTick();
+		  execution_time = end_time - start_time;
+
+		  uint32_t cycle_diff = 0;
+
+		  checksums[i]   = check_sum;
+		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+
+	  }
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+}
+
+
+void Task3(void){
+
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
+
+
+	for (int i = 0; i < 5; i++) {
+		uint64_t start = DWT->CYCCNT;
+		checksums[i] = calculate_mandelbrot_double(width[i], height[i], 100);
+
+		uint64_t cycles = DWT->CYCCNT - start;
+
+		cycle_count[i] = cycles;
+
+		time_secs[i] = cycles / HAL_RCC_GetHCLKFreq();;     // in seconds
+
+
+		throughput_pxps[i] = (double)(dim[i] * dim[i]) / (time_secs[i]);
+
+	  }
+
+		  //TODO: Keep the LEDs ON for 2s
+	HAL_Delay(2000);
+		//TODO: Turn OFF LEDs
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
+
+}
+
+
+void Task4(void){
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+	  check_sum = 0;
+
+	  for (int i = 0; i < 5; i++)
+	  {
+		  start_time = HAL_GetTick();
+
+		  if (width[i]*height[i] * sizeof(uint32_t) <= MEMORY_LIMIT){
+			  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], 100);
+		  }
+		  else{
+			  int split = height[i] /2;
+
+			  check_sum += calculate_mandelbrot_fixed_point_arithmetic(width[i], split, 100);
+
+			  check_sum += calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i] - split, 100);
+
+		  }
+		  end_time = HAL_GetTick();
+		  execution_time = end_time - start_time;
+
+		  checksums[i]   = check_sum;
+		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+
+	  }
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+}
+
+
+void Task5(void){
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+	  for (int i = 0; i < 5; i++)
+	  {
+		  start_time = HAL_GetTick();
+
+		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], 100);
+
+		  end_time = HAL_GetTick();
+		  execution_time = end_time - start_time;
+
+		  uint32_t cycle_diff = 0;
+
+		  checksums[i]   = check_sum;
+		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+
+	  }
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+}
+
+
+void Task6(void){
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+	  for (int i = 0; i < 5; i++)
+	  {
+		  start_time = HAL_GetTick();
+
+		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], 100);
+
+		  end_time = HAL_GetTick();
+		  execution_time = end_time - start_time;
+
+		  uint32_t cycle_diff = 0;
+
+		  checksums[i]   = check_sum;
+		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+
+	  }
+
+	  HAL_Delay(2000);
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+}
+
+
+void Task7(void){
+
+}
+
+
 
 /* USER CODE END 4 */
 
