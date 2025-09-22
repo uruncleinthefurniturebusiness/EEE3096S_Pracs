@@ -54,21 +54,21 @@
 /* USER CODE BEGIN PV */
 //TODO: Define variables you think you might need
 // - Performance timing variables (e.g execution time, throughput, pixels per second, clock cycles)
-int dim[] = {128, 160, 192, 224, 256};
+//int dim[] = {128, 160, 192, 224, 256};
 int width[] = {426, 640, 854, 1280, 1920};
 int height[] = {240, 360, 480, 720, 1080};
 
-uint32_t  start_time=0, end_time=0, execution_time=0;
+uint16_t  start_time=0, end_time=0, execution_time=0;
 uint64_t check_sum=0;
 uint64_t checksums[5];
-uint32_t exec_times[5];
+//uint32_t exec_times[5];
 
 // For Task 3 when you need to find the time in secs and trhoughput and cycles
-uint32_t cycle_counts[5];
-double time_msecs[5];          // seconds for each image size
-double throughput_pxps[5];    // pixels per second for each image size
+//uint32_t cycle_counts[5];
+double time_secs[5];          // seconds for each image size
+//double throughput_pxps[5];    // pixels per second for each image size
 
-double tot_time_sec =0 ;
+//double tot_time_sec =0 ;
 
 /* USER CODE END PV */
 
@@ -133,39 +133,50 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  //TODO: Visual indicator: Turn on LED0 to signal processing start
-	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+	  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
 	  //TODO: Benchmark and Profile Performance
-	  const int num_sizes = sizeof(dim) / sizeof(dim[0]);
+	  //const int num_sizes = sizeof(dim) / sizeof(dim[0]);
 
 	        // Arrays to hold results for viewing in debugger
 
-	      for (int i = 0; i < num_sizes; i++) {
-	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+	      for (int i = 0; i < 5; i++) {
 
-	          uint32_t start = DWT->CYCCNT;
-	          check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
-	          uint32_t cycles = DWT->CYCCNT - start;
+	    	  uint32_t t0 = HAL_GetTick();
+	    	  check_sum = calculate_mandelbrot_double(width[i], height[i], MAX_ITER);
+	    	  uint32_t elapsed_ms = HAL_GetTick() - t0;
+
+	    	  time_secs[i] = elapsed_ms / 1000.0;     // seconds
+	    	  checksums[i]  = check_sum;
 
 
+	    	  //uint64_t start = DWT->CYCCNT;
+	    	  //uint32_t t0 = HAL_GetTick();
+	    	  //check_sum = calculate_mandelbrot_double(width[i], height[i], MAX_ITER);
+	    	  //uint64_t end = DWT->CYCCNT;
+	    	  //uint32_t elapsed_ms = HAL_GetTick() - t0;
 
-	          uint32_t core_clk = HAL_RCC_GetHCLKFreq();
-	          double time_s = (double)cycles / core_clk;
+	    	  //if (end < start) { end += 0x100000000ULL; } // adjust if wrapped
+	    	  //uint64_t cycles = end - start;
+	    	  //double time_s = (double)cycles / HAL_RCC_GetHCLKFreq();
 
-	          checksums[i] = check_sum;
-	          cycle_counts[i]  = cycles;
-	          throughput_pxps[i] = (double)(dim[i] * dim[i]) / (time_s);
-	          time_msecs[i] = time_s/1000;
+	          //uint32_t core_clk = HAL_RCC_GetHCLKFreq();
+	          //double time_s = (double)cycles / core_clk;
 
-	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+	          //checksums[i] = check_sum;
+	          //cycle_counts[i]  = cycles;
+	          //throughput_pxps[i] = (double)(dim[i] * dim[i]) / (time_s);
+	          //time_secs[i] = time_s;
+
+	          //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 
 	      }
 
 
 	  //TODO: Keep the LEDs ON for 2s
-	  HAL_Delay(2000);
+	  //HAL_Delay(2000);
 	  //TODO: Turn OFF LEDs
-	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+	  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
   }
   /* USER CODE END 3 */
 }
