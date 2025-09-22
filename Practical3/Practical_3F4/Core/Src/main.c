@@ -65,7 +65,7 @@ uint32_t exec_times[5];
 
 // For Task 3 when you need to find the time in secs and trhoughput and cycles
 uint32_t cycle_counts[5];
-double time_msecs[5];          // seconds for each image size
+double time_secs[5];          // seconds for each image size
 double throughput_pxps[5];    // pixels per second for each image size
 
 double tot_time_sec =0 ;
@@ -144,18 +144,28 @@ int main(void)
 	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
 	          uint32_t start = DWT->CYCCNT;
-	          check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
-	          uint32_t cycles = DWT->CYCCNT - start;
+	          check_sum = calculate_mandelbrot_double(width[i], height[i], MAX_ITER);
+	          uint32_t stop = DWT->CYCCNT;
+
+	          uint32_t cycle_diff = 0;
+
+	          if (stop < start) {
+	          	  		    // Handle timer overflow
+					cycle_diff = (0xFFFFFFFF - start) + stop + 1;
+			 } else {
+	          	  		    // Normal case
+					cycle_diff = stop - start;
+			 }
 
 
 
 	          uint32_t core_clk = HAL_RCC_GetHCLKFreq();
-	          double time_s = (double)cycles / core_clk;
+	          double time_s = (double)cycle_diff / core_clk;  // time in second
 
 	          checksums[i] = check_sum;
-	          cycle_counts[i]  = cycles;
+	          cycle_counts[i]  = cycle_diff;
 	          throughput_pxps[i] = (double)(dim[i] * dim[i]) / (time_s);
-	          time_msecs[i] = time_s/1000;
+	          time_secs[i] = time_s;
 
 	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 
