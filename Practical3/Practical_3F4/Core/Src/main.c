@@ -25,13 +25,16 @@
 #include "stm32f4xx.h"
 //#include <lcd_stm32f0.c>
 #include <stdlib.h>
+#include "core_cm4.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define MAX_ITER 500
+#define MAX_ITER 100
 #define SCALE 1000000
+
+
 
 
 /* USER CODE END PTD */
@@ -52,10 +55,20 @@
 //TODO: Define variables you think you might need
 // - Performance timing variables (e.g execution time, throughput, pixels per second, clock cycles)
 int dim[] = {128, 160, 192, 224, 256};
+int width[] = {426, 640, 854, 1280, 1920};
+int height[] = {240, 360, 480, 720, 1080};
+
 uint32_t  start_time=0, end_time=0, execution_time=0;
 uint64_t check_sum=0;
 uint64_t checksums[5];
 uint32_t exec_times[5];
+
+// For Task 3 when you need to find the time in secs and trhoughput and cycles
+uint32_t cycle_counts[5];
+double time_msecs[5];          // seconds for each image size
+double throughput_pxps[5];    // pixels per second for each image size
+
+double tot_time_sec =0 ;
 
 /* USER CODE END PV */
 
@@ -105,11 +118,15 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  DWT->CYCCNT = 0;
+  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
     /* USER CODE END WHILE */
@@ -123,23 +140,27 @@ int main(void)
 
 	        // Arrays to hold results for viewing in debugger
 
-	        for (int i = 0; i < num_sizes; i++) {
+	      for (int i = 0; i < num_sizes; i++) {
+	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
-	            start_time = HAL_GetTick();
-
-	            check_sum = calculate_mandelbrot_double(dim[i], dim[i], MAX_ITER);
-
-
-	            end_time = HAL_GetTick();
-
-	            execution_time = end_time - start_time;
-
-	            // Store results
-	            checksums[i] = check_sum;
-	            exec_times[i] = execution_time;
+	          uint32_t start = DWT->CYCCNT;
+	          check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
+	          uint32_t cycles = DWT->CYCCNT - start;
 
 
-	        }
+
+	          uint32_t core_clk = HAL_RCC_GetHCLKFreq();
+	          double time_s = (double)cycles / core_clk;
+
+	          checksums[i] = check_sum;
+	          cycle_counts[i]  = cycles;
+	          throughput_pxps[i] = (double)(dim[i] * dim[i]) / (time_s);
+	          time_msecs[i] = time_s/1000;
+
+	          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+	      }
+
 
 	  //TODO: Keep the LEDs ON for 2s
 	  HAL_Delay(2000);

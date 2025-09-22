@@ -31,7 +31,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 #define MAX_ITER 100
-#define SCALE 100
+#define SCALE 1000000
 
 /* USER CODE END PTD */
 
@@ -139,16 +139,26 @@ int main(void)
 	  		  uint32_t start_cycles = TIM2->CNT;
 	  		  start_time = HAL_GetTick();
 
-	  		  check_sum = calculate_mandelbrot_fixed_point_arithmetic(dim[i], dim[i], MAX_ITER);
+	  		  check_sum = calculate_mandelbrot_double(width[i], height[i], MAX_ITER);
 
 	  		  end_time = HAL_GetTick();
 	  		  execution_time = end_time - start_time;
 
 	  		  uint32_t stop_cycles = TIM2->CNT;
-	  		  uint32_t cycle_diff = stop_cycles - start_cycles;
+
+	  		uint32_t cycle_diff = 0;
+
+	  		if (stop_cycles < start_cycles) {
+	  		    // Handle timer overflow
+	  		    cycle_diff = (0xFFFFFFFF - start_cycles) + stop_cycles + 1;
+	  		} else {
+	  		    // Normal case
+	  		    cycle_diff = stop_cycles - start_cycles;
+	  		}
+
 
 	  		  double time_s = (double)cycle_diff / 48e6;
-	  		  double throughput = (double)(dim[i] * dim[i]) / time_s;
+	  		  double throughput = (double)(width[i] * height[i]) / time_s;
 
 	  		  checksums[i]     = check_sum;
 	  		  exec_times[i]    = execution_time;  // ms from HAL_GetTick()
@@ -318,7 +328,7 @@ uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations)
 
     	}
     }
-    //checksum = mandelbrot_sum;
+
     return mandelbrot_sum;
 }
 
