@@ -140,7 +140,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  //TODO: Visual indicator: Turn on LED0 to signal processing start
 
-	  Task1();
+	  Task4();
 
 	  //TODO: Benchmark and Profile Performance
 
@@ -397,7 +397,7 @@ void Task3(void){
 }
 
 
-void Task4(void){
+/*void Task4(void){
 
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
@@ -430,6 +430,81 @@ void Task4(void){
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 
 
+}*/
+
+uint64_t calculate_mandelbrot_fixed_point_arithmetic_range(int width, int total_height, int y_start, int y_end, int max_iterations) {
+    uint64_t mandelbrot_sum = 0;
+
+    // Process only the specified y range
+    for (int y = y_start; y < y_end; y++) {
+        for (int x = 0; x < width; x++) {
+            // Use total_height for coordinate mapping, not just the tile height
+            int64_t x0 = ((int64_t)x * 3500000 / width) - 2500000;
+            int64_t y0 = ((int64_t)y * 2000000 / total_height) - 1000000;  // Key fix: use total_height
+
+            int64_t xi = 0, yi = 0;
+            int iter = 0;
+
+            while (iter < max_iterations) {
+                int64_t xi2 = (xi*xi)/SCALE;
+                int64_t yi2 = (yi*yi)/SCALE;
+
+                if (xi2 + yi2 > 4 * SCALE) {
+                    break;
+                }
+
+                int64_t temp = xi2-yi2;
+                yi = (2*xi*yi)/SCALE+y0;
+                xi = temp + x0;
+                iter++;
+            }
+            mandelbrot_sum = mandelbrot_sum + iter;
+        }
+    }
+    return mandelbrot_sum;
+}
+
+void Task4(void) {
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+    // Set a realistic memory limit - adjust based on your needs
+    const uint32_t PIXEL_LIMIT = 100000;  // Process max 100k pixels at once
+
+    for (int i = 0; i < 5; i++) {
+        start_time = DWT->CYCCNT;
+        check_sum = 0;
+
+        uint32_t total_pixels = width[i] * height[i];
+
+        if (total_pixels <= PIXEL_LIMIT) {
+            // Small image - use your original function
+            check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], 100);
+        } else {
+            // Large image - split into horizontal tiles
+            int rows_per_tile = PIXEL_LIMIT / width[i];
+            if (rows_per_tile < 1) rows_per_tile = 1;  // At least 1 row per tile
+
+            int y_current = 0;
+            while (y_current < height[i]) {
+                int y_end = y_current + rows_per_tile;
+                if (y_end > height[i]) y_end = height[i];
+
+                // Process this tile using the range function
+                check_sum += calculate_mandelbrot_fixed_point_arithmetic_range(
+                    width[i], height[i], y_current, y_end, 100);
+
+                y_current = y_end;
+            }
+        }
+
+        end_time = DWT->CYCCNT;
+
+        checksums[i] = check_sum;
+        time_secs[i] = (double)(end_time - start_time)/(double)HAL_RCC_GetHCLKFreq();
+    }
+
+    HAL_Delay(2000);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 }
 
 
