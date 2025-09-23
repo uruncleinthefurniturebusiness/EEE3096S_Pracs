@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 1
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 30, 6
   11              		.eabi_attribute 34, 0
   12              		.eabi_attribute 18, 4
   13              		.file	"sysmem.c"
@@ -18,16 +18,18 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              		.file 1 "Core/Src/sysmem.c"
-  18              		.section	.text._sbrk,"ax",%progbits
-  19              		.align	1
-  20              		.p2align 2,,3
-  21              		.global	_sbrk
-  22              		.syntax unified
-  23              		.code	16
-  24              		.thumb_func
-  26              	_sbrk:
-  27              	.LVL0:
-  28              	.LFB0:
+  18              		.section	.bss.__sbrk_heap_end,"aw",%nobits
+  19              		.align	2
+  22              	__sbrk_heap_end:
+  23 0000 00000000 		.space	4
+  24              		.section	.text._sbrk,"ax",%progbits
+  25              		.align	1
+  26              		.global	_sbrk
+  27              		.syntax unified
+  28              		.code	16
+  29              		.thumb_func
+  31              	_sbrk:
+  32              	.LFB0:
    1:Core/Src/sysmem.c **** /**
    2:Core/Src/sysmem.c ****  ******************************************************************************
    3:Core/Src/sysmem.c ****  * @file      sysmem.c
@@ -56,11 +58,11 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 1
   26:Core/Src/sysmem.c **** #include <stddef.h>
   27:Core/Src/sysmem.c **** 
   28:Core/Src/sysmem.c **** /**
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s 			page 2
+
+
   29:Core/Src/sysmem.c ****  * Pointer to the current high watermark of the heap usage
   30:Core/Src/sysmem.c ****  */
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 2
-
-
   31:Core/Src/sysmem.c **** static uint8_t *__sbrk_heap_end = NULL;
   32:Core/Src/sysmem.c **** 
   33:Core/Src/sysmem.c **** /**
@@ -86,161 +88,142 @@ ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 1
   53:Core/Src/sysmem.c ****  */
   54:Core/Src/sysmem.c **** void *_sbrk(ptrdiff_t incr)
   55:Core/Src/sysmem.c **** {
-  29              		.loc 1 55 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 0
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 55 1
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 24
+  36              		@ frame_needed = 1, uses_anonymous_args = 0
+  37 0000 80B5     		push	{r7, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 8
+  40              		.cfi_offset 7, -8
+  41              		.cfi_offset 14, -4
+  42 0002 86B0     		sub	sp, sp, #24
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 32
+  45 0004 00AF     		add	r7, sp, #0
+  46              	.LCFI2:
+  47              		.cfi_def_cfa_register 7
+  48 0006 7860     		str	r0, [r7, #4]
   56:Core/Src/sysmem.c ****   extern uint8_t _end; /* Symbol defined in the linker script */
-  33              		.loc 1 56 3 view .LVU1
   57:Core/Src/sysmem.c ****   extern uint8_t _estack; /* Symbol defined in the linker script */
-  34              		.loc 1 57 3 view .LVU2
   58:Core/Src/sysmem.c ****   extern uint32_t _Min_Stack_Size; /* Symbol defined in the linker script */
-  35              		.loc 1 58 3 view .LVU3
   59:Core/Src/sysmem.c ****   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
-  36              		.loc 1 59 3 view .LVU4
+  49              		.loc 1 59 32
+  50 0008 144A     		ldr	r2, .L5
+  51              		.loc 1 59 53
+  52 000a 154B     		ldr	r3, .L5+4
+  53              		.loc 1 59 18
+  54 000c D31A     		subs	r3, r2, r3
+  55 000e 7B61     		str	r3, [r7, #20]
   60:Core/Src/sysmem.c ****   const uint8_t *max_heap = (uint8_t *)stack_limit;
-  37              		.loc 1 60 3 view .LVU5
-  59:Core/Src/sysmem.c ****   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
-  38              		.loc 1 59 51 is_stmt 0 view .LVU6
-  39 0000 0C49     		ldr	r1, .L8
-  40 0002 0D4A     		ldr	r2, .L8+4
-  55:Core/Src/sysmem.c ****   extern uint8_t _end; /* Symbol defined in the linker script */
-  41              		.loc 1 55 1 view .LVU7
-  42 0004 0300     		movs	r3, r0
-  59:Core/Src/sysmem.c ****   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
-  43              		.loc 1 59 51 view .LVU8
-  44 0006 521A     		subs	r2, r2, r1
-  45              	.LVL1:
+  56              		.loc 1 60 18
+  57 0010 7B69     		ldr	r3, [r7, #20]
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s 			page 3
+
+
+  58 0012 3B61     		str	r3, [r7, #16]
   61:Core/Src/sysmem.c ****   uint8_t *prev_heap_end;
-  46              		.loc 1 61 3 is_stmt 1 view .LVU9
   62:Core/Src/sysmem.c **** 
   63:Core/Src/sysmem.c ****   /* Initialize heap end at first call */
   64:Core/Src/sysmem.c ****   if (NULL == __sbrk_heap_end)
-  47              		.loc 1 64 3 view .LVU10
-  48              		.loc 1 64 12 is_stmt 0 view .LVU11
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 3
-
-
-  49 0008 0C49     		ldr	r1, .L8+8
-  55:Core/Src/sysmem.c ****   extern uint8_t _end; /* Symbol defined in the linker script */
-  50              		.loc 1 55 1 view .LVU12
-  51 000a 10B5     		push	{r4, lr}
-  52              	.LCFI0:
-  53              		.cfi_def_cfa_offset 8
-  54              		.cfi_offset 4, -8
-  55              		.cfi_offset 14, -4
-  56              		.loc 1 64 12 view .LVU13
-  57 000c 0868     		ldr	r0, [r1]
-  58              	.LVL2:
-  59              		.loc 1 64 6 view .LVU14
-  60 000e 0028     		cmp	r0, #0
-  61 0010 04D0     		beq	.L6
+  59              		.loc 1 64 12
+  60 0014 134B     		ldr	r3, .L5+8
+  61 0016 1B68     		ldr	r3, [r3]
+  62              		.loc 1 64 6
+  63 0018 002B     		cmp	r3, #0
+  64 001a 02D1     		bne	.L2
   65:Core/Src/sysmem.c ****   {
   66:Core/Src/sysmem.c ****     __sbrk_heap_end = &_end;
+  65              		.loc 1 66 21
+  66 001c 114B     		ldr	r3, .L5+8
+  67 001e 124A     		ldr	r2, .L5+12
+  68 0020 1A60     		str	r2, [r3]
+  69              	.L2:
   67:Core/Src/sysmem.c ****   }
   68:Core/Src/sysmem.c **** 
   69:Core/Src/sysmem.c ****   /* Protect heap from growing into the reserved MSP stack */
   70:Core/Src/sysmem.c ****   if (__sbrk_heap_end + incr > max_heap)
-  62              		.loc 1 70 3 is_stmt 1 view .LVU15
-  63              		.loc 1 70 23 is_stmt 0 view .LVU16
-  64 0012 C318     		adds	r3, r0, r3
-  65              	.LVL3:
-  66              		.loc 1 70 6 view .LVU17
-  67 0014 9342     		cmp	r3, r2
-  68 0016 06D8     		bhi	.L7
-  69              	.L3:
+  70              		.loc 1 70 23
+  71 0022 104B     		ldr	r3, .L5+8
+  72 0024 1A68     		ldr	r2, [r3]
+  73 0026 7B68     		ldr	r3, [r7, #4]
+  74 0028 D318     		adds	r3, r2, r3
+  75              		.loc 1 70 6
+  76 002a 3A69     		ldr	r2, [r7, #16]
+  77 002c 9A42     		cmp	r2, r3
+  78 002e 07D2     		bcs	.L3
   71:Core/Src/sysmem.c ****   {
   72:Core/Src/sysmem.c ****     errno = ENOMEM;
+  79              		.loc 1 72 5
+  80 0030 FFF7FEFF 		bl	__errno
+  81 0034 0300     		movs	r3, r0
+  82              		.loc 1 72 11 discriminator 1
+  83 0036 0C22     		movs	r2, #12
+  84 0038 1A60     		str	r2, [r3]
   73:Core/Src/sysmem.c ****     return (void *)-1;
+  85              		.loc 1 73 12
+  86 003a 0123     		movs	r3, #1
+  87 003c 5B42     		rsbs	r3, r3, #0
+  88 003e 09E0     		b	.L4
+  89              	.L3:
   74:Core/Src/sysmem.c ****   }
   75:Core/Src/sysmem.c **** 
   76:Core/Src/sysmem.c ****   prev_heap_end = __sbrk_heap_end;
-  70              		.loc 1 76 3 is_stmt 1 view .LVU18
-  71              	.LVL4:
+  90              		.loc 1 76 17
+  91 0040 084B     		ldr	r3, .L5+8
+  92 0042 1B68     		ldr	r3, [r3]
+  93 0044 FB60     		str	r3, [r7, #12]
   77:Core/Src/sysmem.c ****   __sbrk_heap_end += incr;
-  72              		.loc 1 77 3 view .LVU19
-  73              		.loc 1 77 19 is_stmt 0 view .LVU20
-  74 0018 0B60     		str	r3, [r1]
-  75              	.LVL5:
+  94              		.loc 1 77 19
+  95 0046 074B     		ldr	r3, .L5+8
+  96 0048 1A68     		ldr	r2, [r3]
+  97 004a 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s 			page 4
+
+
+  98 004c D218     		adds	r2, r2, r3
+  99 004e 054B     		ldr	r3, .L5+8
+ 100 0050 1A60     		str	r2, [r3]
   78:Core/Src/sysmem.c **** 
   79:Core/Src/sysmem.c ****   return (void *)prev_heap_end;
-  76              		.loc 1 79 3 is_stmt 1 view .LVU21
-  77              	.L1:
+ 101              		.loc 1 79 10
+ 102 0052 FB68     		ldr	r3, [r7, #12]
+ 103              	.L4:
   80:Core/Src/sysmem.c **** }
-  78              		.loc 1 80 1 is_stmt 0 view .LVU22
-  79              		@ sp needed
-  80 001a 10BD     		pop	{r4, pc}
-  81              	.LVL6:
-  82              	.L6:
-  66:Core/Src/sysmem.c ****   }
-  83              		.loc 1 66 5 is_stmt 1 view .LVU23
-  66:Core/Src/sysmem.c ****   }
-  84              		.loc 1 66 21 is_stmt 0 view .LVU24
-  85 001c 0848     		ldr	r0, .L8+12
-  70:Core/Src/sysmem.c ****   {
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 4
-
-
-  86              		.loc 1 70 23 view .LVU25
-  87 001e C318     		adds	r3, r0, r3
-  88              	.LVL7:
-  66:Core/Src/sysmem.c ****   }
-  89              		.loc 1 66 21 view .LVU26
-  90 0020 0860     		str	r0, [r1]
-  70:Core/Src/sysmem.c ****   {
-  91              		.loc 1 70 3 is_stmt 1 view .LVU27
-  70:Core/Src/sysmem.c ****   {
-  92              		.loc 1 70 6 is_stmt 0 view .LVU28
-  93 0022 9342     		cmp	r3, r2
-  94 0024 F8D9     		bls	.L3
-  95              	.L7:
-  72:Core/Src/sysmem.c ****     return (void *)-1;
-  96              		.loc 1 72 5 is_stmt 1 view .LVU29
-  97 0026 FFF7FEFF 		bl	__errno
-  98              	.LVL8:
-  72:Core/Src/sysmem.c ****     return (void *)-1;
-  99              		.loc 1 72 11 is_stmt 0 discriminator 1 view .LVU30
- 100 002a 0C23     		movs	r3, #12
- 101 002c 0360     		str	r3, [r0]
-  73:Core/Src/sysmem.c ****   }
- 102              		.loc 1 73 5 is_stmt 1 view .LVU31
-  73:Core/Src/sysmem.c ****   }
- 103              		.loc 1 73 12 is_stmt 0 view .LVU32
- 104 002e 0120     		movs	r0, #1
- 105 0030 4042     		rsbs	r0, r0, #0
- 106 0032 F2E7     		b	.L1
- 107              	.L9:
- 108              		.align	2
- 109              	.L8:
- 110 0034 00000000 		.word	_Min_Stack_Size
- 111 0038 00000000 		.word	_estack
- 112 003c 00000000 		.word	__sbrk_heap_end
- 113 0040 00000000 		.word	_end
- 114              		.cfi_endproc
- 115              	.LFE0:
- 117              		.section	.bss.__sbrk_heap_end,"aw",%nobits
- 118              		.align	2
- 121              	__sbrk_heap_end:
- 122 0000 00000000 		.space	4
- 123              		.text
- 124              	.Letext0:
- 125              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
- 126              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
- 127              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
- 128              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
-ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s 			page 5
+ 104              		.loc 1 80 1
+ 105 0054 1800     		movs	r0, r3
+ 106 0056 BD46     		mov	sp, r7
+ 107 0058 06B0     		add	sp, sp, #24
+ 108              		@ sp needed
+ 109 005a 80BD     		pop	{r7, pc}
+ 110              	.L6:
+ 111              		.align	2
+ 112              	.L5:
+ 113 005c 00000000 		.word	_estack
+ 114 0060 00000000 		.word	_Min_Stack_Size
+ 115 0064 00000000 		.word	__sbrk_heap_end
+ 116 0068 00000000 		.word	_end
+ 117              		.cfi_endproc
+ 118              	.LFE0:
+ 120              		.text
+ 121              	.Letext0:
+ 122              		.file 2 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 123              		.file 3 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 124              		.file 4 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ 125              		.file 5 "C:\\ST\\STM32CubeIDE_1.19.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltool
+ARM GAS  C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sysmem.c
-C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s:19     .text._sbrk:00000000 $t
-C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s:26     .text._sbrk:00000000 _sbrk
-C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s:110    .text._sbrk:00000034 $d
-C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s:121    .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
-C:\Users\joshr\AppData\Local\Temp\ccaBNrsb.s:118    .bss.__sbrk_heap_end:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s:19     .bss.__sbrk_heap_end:00000000 $d
+C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s:22     .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
+C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s:25     .text._sbrk:00000000 $t
+C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s:31     .text._sbrk:00000000 _sbrk
+C:\Users\joshr\AppData\Local\Temp\ccs0DOt6.s:113    .text._sbrk:0000005c $d
 
 UNDEFINED SYMBOLS
 __errno
-_Min_Stack_Size
 _estack
+_Min_Stack_Size
 _end

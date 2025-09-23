@@ -33,6 +33,7 @@
 /* USER CODE BEGIN PTD */
 #define MAX_ITER 100
 #define SCALE 1000000
+#define MEM_LIM 10000
 
 /* USER CODE END PTD */
 
@@ -51,21 +52,21 @@
 /* USER CODE BEGIN PV */
 //TODO: Define variables you think you might need
 // - Performance timing variables (e.g execution time, throughput, pixels per second, clock cycles)
-//int dim[] = {128, 160, 192, 224, 256};
+int dim[] = {128, 160, 192, 224, 256};
 int width[] = {426, 640, 854, 1280, 1920};
 int height[] = {240, 360, 480, 720, 1080};
 
 uint16_t  start_time=0, end_time=0, execution_time=0;
 uint64_t check_sum=0;
 uint64_t checksums[5];
-//uint32_t exec_times[5];
+uint32_t exec_times[5];
 
 // For Task 3 when you need to find the time in secs and trhoughput and cycles
-//uint32_t cycle_counts[5];
+uint32_t cycle_counts[5];
 double time_secs[5];          // seconds for each image size
-//double throughput_pxps[5];    // pixels per second for each image size
+double throughput_pxps[5];    // pixels per second for each image size
 
-//double tot_time_sec =0 ;
+double tot_time_sec =0  ;
 
 /* USER CODE END PV */
 
@@ -138,6 +139,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  //TODO: Visual indicator: Turn on LED0 to signal processing start
+
+	  Task1();
 
 	  //TODO: Benchmark and Profile Performance
 
@@ -329,6 +332,7 @@ void Task1(void){
 
 		  		  checksums[i]   = check_sum;
 		  		  exec_times[i]  = execution_time;  // ms from HAL_GetTick()
+		  		  tot_time_sec += (double)execution_time/1000;
 
 		  	  }
 
@@ -376,7 +380,7 @@ void Task3(void){
 
 		uint64_t cycles = DWT->CYCCNT - start;
 
-		cycle_count[i] = cycles;
+		cycle_counts[i] = cycles;
 
 		time_secs[i] = cycles / HAL_RCC_GetHCLKFreq();;     // in seconds
 
@@ -397,13 +401,12 @@ void Task4(void){
 
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
-	  check_sum = 0;
-
 	  for (int i = 0; i < 5; i++)
 	  {
+		  check_sum = 0;
 		  start_time = HAL_GetTick();
 
-		  if (width[i]*height[i] * sizeof(uint32_t) <= MEMORY_LIMIT){
+		  if (width[i]*height[i] * sizeof(uint32_t) <= MEM_LIM){
 			  check_sum = calculate_mandelbrot_fixed_point_arithmetic(width[i], height[i], 100);
 		  }
 		  else{
