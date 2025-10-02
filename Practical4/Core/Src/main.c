@@ -34,9 +34,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
-#define NS        // Number of samples in LUT
-#define TIM2CLK   // STM Clock frequency: Hint You might want to check the ioc file
-#define F_SIGNAL  	// Frequency of output analog signal
+#define NS = 128;       // Number of samples in LUT
+#define TIM2CLK = 16e6; // STM Clock frequency: Hint You might want to check the ioc file
+#define F_SIGNAL = 125e3;	// Frequency of output analog signal
 
 /* USER CODE END PD */
 
@@ -52,7 +52,7 @@ DMA_HandleTypeDef hdma_tim2_ch1;
 
 /* USER CODE BEGIN PV */
 // TODO: Add code for global variables, including LUTs
-uint32_t Sin_LUT[NS] = {
+uint32_t Sin_LUT[] = {
 	    2047, 2147, 2248, 2347, 2446, 2545, 2641, 2737,
 	    2831, 2922, 3012, 3100, 3185, 3267, 3346, 3422,
 	    3495, 3564, 3630, 3692, 3749, 3803, 3853, 3898,
@@ -72,7 +72,7 @@ uint32_t Sin_LUT[NS] = {
 	};
 
 
-uint32_t Saw_LUT[NS] = {
+uint32_t Saw_LUT[] = {
 	       0,   31,   63,   95,  127,  159,  191,  223,
 	     255,  287,  319,  351,  383,  415,  447,  479,
 	     511,  543,  575,  607,  639,  671,  703,  735,
@@ -92,7 +92,7 @@ uint32_t Saw_LUT[NS] = {
 	};
 
 
-uint32_t Triangle_LUT[NS] = {
+uint32_t Triangle_LUT[] = {
 	       0,  127,  255,  383,  511,  639,  767,  895,
 	    1023, 1151, 1279, 1407, 1535, 1663, 1791, 1919,
 	    2047, 2175, 2303, 2431, 2559, 2687, 2815, 2943,
@@ -112,7 +112,7 @@ uint32_t Triangle_LUT[NS] = {
 	};
 
 
-uint32_t Piano_LUT = {
+uint32_t Piano_LUT[] = {
 	    2047, 2176, 1988, 2095, 2061, 2086, 2038, 2153,
 	    2094, 2148, 2082, 2054, 2017, 2318, 2058, 1780,
 	    2028, 2046, 1974, 2054, 2062, 2050, 1607, 2023,
@@ -132,7 +132,7 @@ uint32_t Piano_LUT = {
 	};
 
 
-uint32_t Guitar_LUT = {
+uint32_t Guitar_LUT[] = {
 	    2047, 2187, 2186, 2081, 2069, 1965, 1952, 2033,
 	    1819, 2067, 2062, 2049, 2065, 2060, 1979, 2042,
 	    2045, 2038, 1895, 2249, 1989, 1980, 2233, 2129,
@@ -153,7 +153,7 @@ uint32_t Guitar_LUT = {
 
 
 
-uint32_t Drum_LUT = {
+uint32_t Drum_LUT[] = {
 	    2047, 3396, 1864, 2110, 2063, 3400, 1893, 1933,
 	    2086, 2144, 2036, 2030, 2039, 1949, 1414, 1848,
 	    2091, 2032, 2044, 2059, 2048, 2093, 2044, 2020,
@@ -317,7 +317,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 4294967295;
+  htim2.Init.Period = TIM2_Ticks - 1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
