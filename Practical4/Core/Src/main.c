@@ -52,7 +52,7 @@ DMA_HandleTypeDef hdma_tim2_ch1;
 
 /* USER CODE BEGIN PV */
 // TODO: Add code for global variables, including LUTs
-uint32_t Sin_LUT[] = {
+uint32_t Sine_LUT[] = {
 	    2047, 2147, 2248, 2347, 2446, 2545, 2641, 2737,
 	    2831, 2922, 3012, 3100, 3185, 3267, 3346, 3422,
 	    3495, 3564, 3630, 3692, 3749, 3803, 3853, 3898,
@@ -189,6 +189,7 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
+
 /* USER CODE BEGIN PFP */
 void EXTI0_IRQHandler(void);
 /* USER CODE END PFP */
@@ -230,17 +231,18 @@ int main(void)
   MX_DMA_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
+  init_LCD();
   /* USER CODE BEGIN 2 */
   // TODO: Start TIM3 in PWM mode on channel 3
-
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
   // TODO: Start TIM2 in Output Compare (OC) mode on channel 1
-
+  HAL_TIM_OC_Start(&htim2, TIM_CHANNEL_1);
   // TODO: Start DMA in IT mode on TIM2->CH1. Source is LUT and Dest is TIM3->CCR3; start with Sine LUT
-
+  HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t) Sine_LUT, (uint32_t) &(TIM3->CCR3), NS);
   // TODO: Write current waveform to LCD(Sine is the first waveform)
-
+  lcd_putstring("cracker");
   // TODO: Enable DMA (start transfer from LUT to CCR)
-
+  __HAL_TIM_ENABLE_DMA(&htim2, TIM_DMA_CC1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
