@@ -173,6 +173,25 @@ uint32_t Drum_LUT[] = {
 	};
 
 
+// THIS is for Task 5, where we switch between the waves
+typedef enum{
+	SIN,
+	SAW,
+	TRI,
+	PIA,
+	GUI,
+	DRU,
+	COUNT
+} Waveform_t;
+
+
+volatile Waveform_t currentWave = SIN;
+
+// Task 5 debouncing stuffs
+static uint32_t lastPress = 0;
+#define DEBOUNCE_MS 150   // debounce threshold (ms)
+
+
 
 
 
@@ -511,12 +530,62 @@ void EXTI0_IRQHandler(void){
 
 	// TODO: Debounce using HAL_GetTick()
 
+	uint32_t now = HAL_GetTick();
+
 
 	// TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
 	// HINT: Consider using C's "switch" function to handle LUT changes
 
+	if ((now - lastPress) > DEBOUNCE_MS){
+		lastPress = now;
 
+		// Stops the DMA transfer
+		__HAL_TIM_DISABLE_DMA(&htim2, TIM_DMA_CC1);
+		HAL_DMA_Abort_IT(&hdma_tim2_ch1);
 
+		// Increment to next waveform
+        currentWave = (currentWave + 1) % WAVE_COUNT;
+
+        uint32_t *lutPtr = NULL;
+        const char *name = "";
+
+        switch (currentWave) {
+			case SIN:
+				lutPtr = Sine_LUT;
+				name = "Sine";
+				break;
+			case SAW:
+				lutPtr = Saw_LUT;
+				name = "Sawtooth";
+				break;
+			case TRI:
+				lutPtr = Triangle_LUT;
+				name = "Triangle";
+				break;
+			case PIA:
+				lutPtr = Piano_LUT;
+				name = "Piano";
+				break;
+			case GUI:
+				lutPtr = Guitar_LUT;
+				name = "Guitar";
+				break;
+			case DRU:
+				lutPtr = Drum_LUT;
+				name = "Drum";
+				break;
+		}
+
+        // Restart DMA with new lut
+        HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t)lutPtr, (uint32_t)&htim2.Instance->CCR1, NS);
+
+        __HAL_TIM_ENABLE_DMA(&htim2, TIM_DMA_CC1);
+
+        // 5. Update LCD
+        lcd_command(CLEAR);
+        lcd_putstring(name);
+
+	}
 
 	HAL_GPIO_EXTI_IRQHandler(Button0_Pin); // Clear interrupt flags
 }
